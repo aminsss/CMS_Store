@@ -1,0 +1,925 @@
+body {
+    direction: rtl;
+}
+.navbar-brand {
+    margin-right: 0;
+}
+.zovio-nav .navbar {
+    padding-left: 25px;
+    padding-right: 0;
+}
+.zovio-nav .navbar .navbar-nav {
+    margin-right: auto;
+    margin-left: 0;
+}
+.zovio-nav .navbar .navbar-nav .nav-item:first-child a {
+    margin-right: 0;
+    margin-left: 15px;
+}
+.zovio-nav .navbar .navbar-nav .nav-item:last-child a {
+    margin-left: 0;
+    margin-right: 15px;
+}
+.zovio-nav .navbar .others-options {
+    margin-right: 25px;
+    margin-left: 0;
+}
+.zovio-nav .navbar .others-options .option-item {
+    margin-right: 15px;
+    margin-left: 0;
+}
+.zovio-nav .navbar .navbar-nav .nav-item .dropdown-menu {
+    right: 0;
+    left: auto;
+    text-align: right;
+}
+.zovio-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover, .zovio-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus, .zovio-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active {
+    padding-right: 26px;
+    padding-left: 0;
+}
+.zovio-nav .navbar .navbar-nav .nav-item .dropdown-menu li a::before {
+    right: -5px;
+    left: auto;
+}
+.zovio-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
+    right: -250px;
+    left: auto;
+}
+.search-overlay.search-popup {
+    left: 0;
+    right: auto;
+}
+.search-overlay.search-popup .search-form .search-button {
+    left: 0;
+    right: auto;
+}
+.search-overlay.search-popup .search-form .search-input {
+    padding-right: 10px;
+    padding-left: 0;
+}
+.home-slides.owl-theme .owl-nav {
+    right: 5px;
+    left: auto;
+}
+.about-content {
+    padding-left: 30px;
+    padding-right: 0;
+    text-align: right;
+}
+.about-content .back-animation-text {
+    right: 10px;
+    left: auto;
+}
+.single-offer-box .offer-content {
+    padding: 25px 25px 25px 75px;
+    text-align: right;
+}
+.single-offer-box .offer-content::before {
+    right: 0;
+    left: auto;
+}
+.single-offer-box .offer-content .details-btn {
+    left: 20px;
+    right: auto;
+}
+.single-services-box .services-content {
+    right: 0;
+    left: auto;
+}
+.single-services-box .services-content::before {
+    right: 0;
+    left: auto;
+}
+.single-services-box .services-content .details-btn {
+    left: 25px;
+    right: auto;
+}
+.single-services-box .services-content {
+    padding: 20px 25px 20px 75px;
+    text-align: right;
+}
+.services-area .section-title {
+    text-align: right;
+    margin-right: 0;
+}
+.services-slides.owl-theme .owl-nav {
+    left: 13.5% !important;
+    right: auto !important;
+}
+.our-story-content .quote {
+    right: 0;
+    left: auto;
+}
+.our-story-content {
+    text-align: right;
+}
+.our-story-content .quote::after {
+    right: 52px;
+    left: auto;
+}
+.how-we-work-area .section-title {
+    text-align: right;
+    margin-right: 0;
+}
+.how-we-work-process .process-list .single-process {
+    text-align: right;
+}
+.how-we-work-process .process-list .single-process .content .number {
+    right: 0;
+    left: auto;
+}
+.how-we-work-process::before {
+    right: -275px;
+    left: auto;
+  -webkit-transform: rotate(-4deg);
+          transform: rotate(-4deg);
+}
+.single-projects-box {
+    text-align: right;
+}
+.single-testimonials-item {
+    text-align: right;
+}
+.single-testimonials-item::after {
+    right: 30px;
+    left: auto;
+}
+.single-testimonials-item .client-info {
+    padding-right: 75px !important;
+    margin-left: 0 !important;
+}
+.single-testimonials-item .client-info img {
+    right: 0;
+    left: auto;
+}
+.team-area .section-title {
+    text-align: right;
+    margin-right: 0;
+}
+.team-slides.owl-theme .owl-nav {
+    left: 0;
+    right: auto;
+}
+.single-team-box .social {
+    padding-right: 0;
+    left: 0;
+    right: auto;
+}
+.single-team-box span {
+    left: 0;
+    right: auto;
+}
+.company-value-content {
+    padding-right: 50px;
+    text-align: right;
+    padding-left: 0;
+}
+.company-value-content .company-value-features ul {
+    padding-right: 0;
+}
+.company-value-content .company-value-features ul li {
+    padding-right: 20px;
+    padding-left: 0;
+}
+.company-value-content .company-value-features ul li::before {
+    right: 0;
+    left: auto;
+}
+.single-blog-post {
+    text-align: right;
+}
+.single-blog-post .post-content .read-more-btn i {
+    margin-right: 5px;
+    margin-left: 0;
+}
+.single-blog-post .post-content h3::before {
+    right: 0;
+    left: auto;
+}
+.footer-area {
+    text-align: right;
+}
+.single-footer-widget .social {
+    padding-right: 0;
+}
+.single-footer-widget .social li {
+    margin-left: 6px;
+    margin-right: 0;
+}
+.single-footer-widget .useful-links {
+    padding-right: 0;
+}
+.single-footer-widget .newsletter-content form .input-newsletter {
+    padding-right: 10px;
+    padding-left: 0;
+}
+.single-footer-widget .useful-links li a {
+    padding-right: 35px;
+    padding-left: 0;
+}
+.single-footer-widget .useful-links li a::before {
+    right: 0;
+    left: auto;
+}
+.single-footer-widget .newsletter-content form #validator-newsletter {
+    right: 0;
+    left: auto;
+}
+.single-footer-widget .footer-contact-info li {
+    padding-right: 24px;
+    padding-left: 0;
+}
+.single-footer-widget .footer-contact-info {
+    padding-right: 0;
+}
+.single-footer-widget .footer-contact-info li i {
+    right: 0;
+    left: auto;
+}
+.single-footer-widget .social {
+    padding-right: 0;
+}
+.pl-5, .px-5 {
+    padding-right: 3rem!important;
+    padding-left: 0 !important;
+}
+.go-top {
+    left: 15px;
+    right: auto;
+}
+.navbar-area.navbar-style-two .navbar-brand {
+    right: 0;
+    left: auto;
+}
+.zovio-nav .navbar .others-options .burger-menu {
+    margin-right: 15px;
+    margin-left: 0;
+}
+.navbar-area.navbar-style-two .zovio-nav .navbar .navbar-nav {
+    margin-right: 200px;
+    margin-left: auto;
+}
+.zovio-nav .navbar .others-options .burger-menu span:nth-child(3) {
+    margin-right: auto;
+    margin-left: 0;
+}
+.sidebar-modal.active .sidebar-modal-inner {
+    left: 0;
+    right: auto;
+}
+.sidebar-modal .sidebar-modal-inner {
+    left: -100%;
+    right: auto;
+    text-align: right;
+}
+.sidebar-modal .sidebar-contact-area .contact-info .contact-info-content .social {
+    padding-right: 0;
+}
+.contact-info {
+    padding-right: 25px;
+    padding-left: 0;
+}
+.sidebar-modal .sidebar-instagram-feed ul {
+    padding-right: 0;
+}
+.sidebar-modal .sidebar-modal-inner .close-btn {
+    left: 35px;
+    right: auto;
+}
+.about-text {
+    padding-left: 30px;
+    text-align: right;
+    padding-right: 0;
+}
+.about-text .back-animation-text {
+    right: 10px;
+    left: auto;
+}
+.about-img img:nth-child(2) {
+    right: -75px;
+    left: auto;
+}
+.single-process-box {
+    text-align: right;
+}
+.single-process-box .number {
+    right: 0;
+    left: auto;
+}
+.offer-box .read-more-btn::before {
+    left: 0;
+    right: auto;
+}
+.offer-box .read-more-btn:hover::before {
+    left: -15px;
+    right: auto;
+}
+.services-box .read-more-btn::before {
+    left: 0;
+    right: auto;
+}
+.services-box .read-more-btn:hover::before {
+    left: -15px;
+    right: auto;
+}
+.single-team-member .member-image .social {
+    padding-right: 0px;
+}
+.page-title-content {
+    text-align: right;
+}
+.page-title-content h2::before {
+    right: 0;
+    left: auto;
+}
+.widget-area .widget_search form button {
+    left: 0;
+    right: auto;
+}
+.widget-area .widget .widget-title {
+    text-align: right;
+}
+.widget-area .widget .widget-title::before {
+    right: 0;
+    left: auto;
+}
+.widget-area .widget_services_list ul {
+    padding-right: 0;
+}
+.widget-area .widget_services_list ul li a i {
+    left: 15px;
+    right: auto;
+}
+.widget-area .widget_services_list ul li a::before {
+    right: 0;
+    left: auto;
+}
+.widget-area .widget_services_list ul li a {
+    padding-right: 15px;
+    padding-left: 35px;
+    text-align: right;
+}
+.widget-area .widget_services_list ul li a.active, .widget-area .widget_services_list ul li a:hover {
+    padding-right: 20px;
+    padding-left: 0;
+}
+.widget-area .widget_download ul li a i {
+    left: 15px;
+    right: auto;
+}
+.widget-area .widget_download ul li a {
+    padding-right: 15px;
+    padding-left: 35px;
+    text-align: right;
+}
+.widget-area .widget_download ul li a::before {
+    right: 0;
+    left: auto;
+}
+.widget-area .widget_download ul li a.active, .widget-area .widget_download ul li a:hover {
+    padding-right: 20px;
+    padding-left: 0;
+}
+.widget-area .widget_download ul {
+    padding-right: 0;
+}
+.services-details-desc {
+    text-align: right;
+}
+.services-details-desc .services-features-list {
+    padding-right: 0;
+}
+.services-details-desc .services-features-list li {
+    padding-right: 34px;
+    padding-left: 0;
+}
+.services-details-desc .services-features-list li i {
+    right: 0;
+    left: auto;
+}
+.services-details-desc .wp-block-gallery.columns-3 {
+    padding-right: 0;
+}
+.projects-details {
+    text-align: right;
+}
+.projects-details-desc .project-details-info .single-info-box .social {
+    padding-right: 0;
+}
+.single-projects-box .projects-content {
+    right: 0;
+    left: auto;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+.woocommerce-result-count {
+    text-align: right;
+}
+.nice-select:after {
+    left: 12px !important;
+    right: auto !important;
+}
+.woocommerce-topbar .woocommerce-topbar-ordering .nice-select {
+    text-align: right !important;
+}
+.woocommerce-topbar .woocommerce-topbar-ordering .nice-select .list .option {
+    text-align: right;
+}
+.single-product-box .product-image .sale-btn {
+    right: 20px;
+    left: auto;
+}
+.single-product-box .product-image .add-to-cart-btn i {
+    left: 20px;
+    right: auto;
+}
+.single-product-box .product-image {
+    text-align: right;
+}
+.product-details-desc {
+    text-align: right;
+}
+.product-details-desc .buy-checkbox-btn .cbx span:last-child {
+    padding-right: 4px;
+    padding-left: 0;
+}
+.product-details-desc .product-review .rating {
+    padding-left: 5px;
+    padding-right: 0;
+}
+.products-details-tab .tabs {
+    padding-right: 0;
+    text-align: right;
+}
+.products-details-tab .tabs li {
+    margin-left: 5px;
+    margin-right: 0;
+}
+.products-details-tab .tab_content {
+    text-align: right;
+}
+.products-details-tab .tab_content .tabs_item .products-details-tab-content .additional-information {
+    padding-right: 0;
+    text-align: right;
+}
+.products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-title .default-btn {
+    left: 0;
+    right: auto;
+}
+.products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-title p {
+    padding-right: 5px;
+    padding-left: 0;
+}
+.products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-comments .review-item {
+    padding-left: 200px;
+    padding-right: 0;
+}
+.products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-comments .review-item .review-report-link {
+    left: 0;
+    right: auto;
+}
+.cart-area {
+    text-align: right;
+}
+.cart-table table tbody tr td.product-subtotal .remove {
+    float: left;
+}
+.text-right {
+    text-align: left !important;
+}
+.cart-buttons .shopping-coupon-code button {
+    left: 0;
+    right: auto;
+}
+.cart-totals ul {
+    padding-right: 0;
+}
+.cart-totals ul li span {
+    float: left;
+}
+.user-actions {
+    text-align: right;
+}
+.order-details .title {
+    text-align: right;
+}
+.order-details .title::before {
+    right: 0;
+    left: auto;
+}
+.billing-details .title {
+    text-align: right;
+}
+.billing-details .title::before {
+    right: 0;
+    left: auto;
+}
+.order-details .order-table table {
+    text-align: right;
+}
+.order-details .payment-box {
+    text-align: right;
+}
+.order-details .payment-box .payment-method p [type="radio"]:checked + label, .order-details .payment-box .payment-method p [type="radio"]:not(:checked) + label {
+    padding-right: 27px;
+    padding-left: 0;
+}
+.order-details .payment-box .payment-method p [type="radio"]:checked + label::before, .order-details .payment-box .payment-method p [type="radio"]:not(:checked) + label::before {
+    right: 0;
+    left: auto;
+}
+.order-details .payment-box .payment-method p [type="radio"]:checked + label::after, .order-details .payment-box .payment-method p [type="radio"]:not(:checked) + label::after {
+    right: 3px;
+    left: auto;
+}
+.billing-details .form-group .nice-select {
+    text-align: right !important;
+}
+.billing-details .form-group label {
+    text-align: right;
+}
+.billing-details .form-group .nice-select .list .option {
+    text-align: right;
+}
+.form-check {
+    padding-right: 1.25rem;
+    text-align: right;
+    padding-left: 0;
+}
+.form-check-input {
+    margin-right: -1.25rem;
+    padding-left: 0;
+}
+.faq-accordion {
+    padding-right: 50px;
+    text-align: right;
+    padding-left: 0;
+}
+.faq-accordion .accordion {
+    padding-right: 0;
+}
+.faq-accordion .accordion .accordion-title {
+    padding: 12px 50px 12px 20px;
+    text-align: right;
+}
+.faq-accordion .accordion .accordion-title i {
+    right: 0;
+    left: auto;
+}
+.faq-contact-form form .help-block ul {
+    padding-right: 0;
+    text-align: right;
+}
+.widget-area .widget {
+    text-align: right;
+}
+.widget-area .widget_recent_comments ul li {
+    padding-right: 17px;
+    padding-left: 0;
+}
+.widget-area .widget_recent_comments ul li::before {
+    right: 0;
+    left: auto;
+}
+.widget-area .widget_archive ul li {
+    padding-right: 17px;
+    padding-left: 0;
+}
+.widget-area .widget_archive ul li::before {
+    right: 0;
+    left: auto;
+}
+.widget-area .widget_categories ul li {
+    padding-right: 17px;
+    padding-left: 0;
+}
+.widget-area .widget_categories ul li::before {
+    right: 0;
+    left: auto;
+}
+.widget-area .widget_zovio_posts_thumb .item .thumb {
+    float: right;
+    margin-left: 15px;
+    margin-right: 0;
+}
+.blog-details-desc {
+    text-align: right;
+}
+.blog-details-desc .article-content .entry-meta ul {
+    padding-right: 0;
+}
+.blog-details-desc .article-content .entry-meta ul li {
+    margin-left: 21px;
+    margin-right: 0;
+}
+.blog-details-desc .article-content .entry-meta ul li:last-child {
+    margin-left: 0;
+}
+.blog-details-desc .article-content .entry-meta ul li::before {
+    left: -15px;
+    right: auto;
+}
+blockquote::before, .blockquote::before {
+    right: 50px;
+    left: auto;
+}
+blockquote::after, .blockquote::after {
+    right: 0;
+    left: auto;
+}
+.blog-details-desc .article-content .wp-block-gallery.columns-3 {
+    padding-right: 0;
+}
+.blog-details-desc .article-content .features-list {
+    padding-right: 0;
+}
+.blog-details-desc .article-content .features-list li {
+    padding-right: 34px;
+    padding-left: 0;
+}
+.blog-details-desc .article-content .features-list li i {
+    right: 0;
+    left: auto;
+}
+.blog-details-desc .article-footer .article-tags span {
+    margin-left: 5px;
+    margin-right: 0;
+}
+.blog-details-desc .article-footer .article-share .social {
+    padding-right: 0;
+    text-align: left;
+}
+.blog-details-desc .article-footer .article-share .social li span {
+    margin-left: 2px;
+    margin-right: 0;
+}
+.post-navigation .navigation-links .nav-next {
+    text-align: left;
+}
+.comments-area .comments-title::before {
+    right: -25px;
+    left: auto;
+}
+.comments-area .comment-body {
+    padding-right: 65px;
+    padding-left: 0;
+}
+.comments-area .comment-author .avatar {
+    right: -65px;
+    left: auto;
+}
+.comments-area .comment-respond .comment-reply-title::before {
+    right: -25px;
+    left: auto;
+}
+.comments-area .comment-respond .comment-form-cookies-consent {
+    padding-right: 20px;
+    padding-left: 0;
+}
+.comments-area .comment-respond .comment-form-cookies-consent input {
+    right: 0;
+    left: auto;
+}
+.comments-area .children {
+    margin-right: 20px;
+    margin-left: 0;
+}
+.contact-form form .help-block ul {
+    padding-right: 0;
+    text-align: right;
+}
+.contact-info ul li {
+    padding-right: 95px;
+    padding-left: 0;
+    text-align: right;
+}
+.contact-info ul li .icon {
+    right: 0;
+    left: auto;
+}
+.about-image {
+    padding-left: 17px;
+    padding-right: 0;
+}
+.about-image::before {
+    left: 0;
+    right: auto;
+}
+.about-image:hover::before {
+    left: 5px;
+    right: auto;
+}
+.sidebar-modal .sidebar-contact-area .contact-info .contact-info-content .social li {
+    padding-right: 0;
+    text-align: center;
+}
+.about-content .back-animation-text {
+    font-size: 62px;
+}
+.about-text .back-animation-text {
+    font-size: 56px;
+}
+.about-text .quote {
+    font-size: 20px;
+}
+.single-team-box .name {
+    right: -6px;
+    left: auto;
+    top: 50%;
+    transform-origin: 80px 0;
+    -webkit-transform: translateY(-80%) rotate(-90deg);
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* RTL responsive css*/
+@media only screen and (max-width: 767px) {
+    .mean-container a.meanmenu-reveal {
+        left: 0 !important;
+        right: auto !important;
+    }
+    .zovio-responsive-nav .others-options {
+        left: 55px;
+        right: auto;
+    }
+    .zovio-responsive-nav .others-options .option-item {
+        margin-right: 15px;
+        margin-left: 0;
+    }
+    .zovio-responsive-nav .logo {
+        text-align: right;
+    }
+    .zovio-responsive-nav .search-overlay.search-popup {
+        left: -50px;
+        right: auto;
+    }
+    .mean-container .mean-nav ul li a.mean-expand {
+        width: 90%;
+    }
+    .about-content {
+        padding-left: 0;
+    }
+    .single-offer-box .offer-content {
+        padding: 20px 20px 20px 60px !important;
+        text-align: right;
+    }
+    .single-offer-box .offer-content .details-btn {
+        left: 15px !important;
+        right: auto !important;
+    }
+    .services-slides.owl-theme .owl-nav {
+        left: 0 !important;
+        right: auto !important;
+    }
+    .single-services-box .services-content {
+        padding: 15px 20px 15px 60px !important;
+        text-align: right;
+    }
+    .single-services-box .services-content .details-btn {
+        left: 15px !important;
+        right: auto !important;
+    }
+    .single-testimonials-item::after {
+        right: 20px !important;
+        left: auto !important;
+    }
+    .company-value-content {
+        padding-right: 0;
+    }
+    .about-text {
+        padding-left: 0;
+    }
+    .about-img img:nth-child(2) {
+        right: 0;
+        left: auto;
+    }
+    .about-img {
+        text-align: left !important;
+    }
+    .products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-comments .review-item {
+        padding-left: 0;
+    }
+    .page-title-content h2::before {
+        left: 0;
+    }
+    .cart-table table tbody tr td:first-child {
+        text-align: right !important;
+    }
+    .faq-accordion {
+        padding-right: 0;
+    }
+    .comments-area .comment-body {
+        padding-right: 0;
+    }
+    .comments-area .comment-author .avatar {
+        right: 0;
+        left: auto;
+    }
+    .contact-info ul {
+        padding-right: 0;
+    }
+    .contact-info {
+        padding-right: 0;
+    }
+    .single-team-box .name {
+        right: 12px !important;
+        left: auto !important;
+        top: 65% !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .mean-container a.meanmenu-reveal {
+        left: 0 !important;
+        right: auto !important;
+    }
+    .zovio-responsive-nav .others-options {
+        left: 55px;
+        right: auto;
+    }
+    .zovio-responsive-nav .others-options .option-item {
+        margin-right: 15px;
+        margin-left: 0;
+    }
+    .zovio-responsive-nav .logo {
+        text-align: right;
+    }
+    .zovio-responsive-nav .search-overlay.search-popup {
+        left: -50px;
+        right: auto;
+    }
+    .mean-container .mean-nav ul li a.mean-expand {
+        width: 90%;
+    }
+    .about-content {
+        padding-left: 0;
+    }
+    .services-slides.owl-theme .owl-nav {
+        left: 30px !important;
+        right: auto !important;
+    }
+    .our-story-content .quote::after {
+        right: 25px !important;
+        left: auto !important;
+    }
+    .company-value-content {
+        padding-right: 0;
+    }
+    .about-text {
+        padding-left: 0;
+    }
+    .about-img img:nth-child(2) {
+        right: 0;
+        left: auto;
+    }
+    .about-img {
+        text-align: left !important;
+    }
+    .faq-accordion {
+        padding-right: 0;
+    }
+    .contact-info ul {
+        padding-right: 0;
+    }
+    .contact-info {
+        padding-right: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .services-slides.owl-theme .owl-nav {
+        left: 30px !important;
+        right: auto !important;
+    } 
+    .navbar-area.navbar-style-two .zovio-nav .navbar .navbar-nav {
+        margin-right: 130px;
+    }
+    .about-img img:nth-child(2) {
+        right: -50px;
+        left: auto;
+    }
+    .contact-info ul {
+        padding-right: 0;
+    }
+    .contact-info {
+        padding-right: 0;
+    }
+}
+
+
+
+
+
+
+.products-details-tab .tabs li a .dot {
+  right: 30px;
+}
+
+.products-details-tab .tabs li a {
+  padding-left: 30px;
+  padding-right: 48px;
+}
+
+.cart-totals {
+  margin-left: 0;
+  margin-right: auto;
+}
