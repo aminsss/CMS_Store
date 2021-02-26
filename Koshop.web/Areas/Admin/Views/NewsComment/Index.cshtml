@@ -62,11 +62,11 @@
                 <td class="text-right">
                     @if (item.UserId == null)
                     {
-                        <img class="img-person img-circle" src="~/Upload/Profile/thumbnail/no-photo.png">
+                        <img class="img-person img-circle" src="~/Content/Upload/Profile/thumbnail/no-photo.png">
                     }
                     else
                     {
-                        <img class="img-person img-circle" src="~/Upload/Profile/thumbnail/@item.User.Profile">
+                        <img class="img-person img-circle" src="~/Content/Upload/Profile/thumbnail/@item.User.Profile">
                     }
                     <span>
                         @Html.DisplayFor(modelitem => item.Name)
@@ -125,9 +125,9 @@
 </div>
 
 @section Script{
-    <script src="~/assets/plugins/ladda/dist/spin.min.js"></script>
-    <script src="~/assets/plugins/ladda/dist/ladda.min.js"></script>
-    <script src="~/assets/js/pages/ladda.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/spin.min.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/ladda.min.js"></script>
+    <script src="~/content/assets/js/pages/ladda.js"></script>
     <script>
 
         function Delete(id) {
@@ -246,6 +246,6 @@
 }
 
 @section Head{
-    <link href="~/assets/plugins/noty/css/flat.css" rel="stylesheet">
-    <link href="~/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+    <link href="~/content/assets/plugins/noty/css/flat.css" rel="stylesheet">
+    <link href="~/content/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
 }

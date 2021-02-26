@@ -3,7 +3,7 @@
 
 <div style="display: none;">
     <div class="overlay" id="vienna"></div>
-    <div id="markervienna"><img src="/massets/img/location.png" /></div>
+    <div id="markervienna"><img src="~/content/Koshop/assets/img/location.png" /></div>
     <div id="popup"></div>
 </div>
 @{
@@ -15,14 +15,14 @@
 
 
 }
-<div class="an-inner-banner has-bg" style="background: url('/massets/img/slider5.jpg') center center no-repeat;background-size: cover;">
+<div class="an-inner-banner has-bg" style="background: url('~/content/Koshop/assets/img/slider5.jpg') center center no-repeat;background-size: cover;">
     <div class="overlay"></div>
     <div class="container">
         <div class="an-agency-single an-agent-single">
             <div class="left">
-                <div class="image" style="background: url('/StoreImage/Images/no-photo.png') center center no-repeat; background-size: cover; background-color:#FFF">
+                <div class="image" style="background: url('/content/StoreImage/Images/no-photo.png') center center no-repeat; background-size: cover; background-color:#FFF">
                     @*<a class="edit-btn" href="#"><i class="ion-ios-gear"></i>ویرایش</a>*@
-                    <img class="image backgrstore" src="/StoreImage/thumbnail/@Model.StoreIcon" />
+                    <img class="image backgrstore" src="/content/StoreImage/thumbnail/@Model.StoreIcon" />
                 </div>
                 <div class="name">
                     <div class="an-title-container center">
@@ -79,7 +79,7 @@
                     <div class="widget-author">
                         <div class="an-testimonial">
                             <div class="testimonial-single">
-                                <img src="http://statics-kspub.koshop.ir/Upload/Profile/@user.Profile" class="image backgrprofile" />
+                                <img src="/Content/Upload/Profile/@user.Profile" class="image backgrprofile" />
                                 <p class="accents">مدیریت</p>
                                 <a href="">@user.Name</a>
                                 @*<p class="position">@user.chartPost</p>*@
@@ -255,10 +255,10 @@
 </div>
 
 @section Script{
-    <script src="~/assets/plugins/ladda/dist/spin.min.js"></script>
-    <script src="~/assets/plugins/ladda/dist/ladda.min.js"></script>
-    <script src="~/assets/js/pages/ladda.js"></script>
-    <script src="~/massets/js/login.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/spin.min.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/ladda.min.js"></script>
+    <script src="~/content/assets/js/pages/ladda.js"></script>
+    <script src="~/content/Koshop/assets/js/login.js"></script>
     <script>
         $(document).ready(function () {
             var contactForm = $("#contactForm");
@@ -461,10 +461,10 @@
 
 @section Head{
     <title>@Model.StoreName</title>
-    <link href="~/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+    <link href="~/content/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="~/ol/ol.css" type="text/css">
-    <script src="~/ol/ol.js"></script>
+    <link rel="stylesheet" href="~/content/ol/ol.css" type="text/css">
+    <script src="~/content/ol/ol.js"></script>
 }
 
 @section footer{

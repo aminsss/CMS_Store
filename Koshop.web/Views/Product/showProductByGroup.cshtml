@@ -4,17 +4,17 @@
 {
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <img src="~/ProductImages/thumbnail/@item.ProductImage" alt="...">
+            <img src="~/Content/ProductImages/thumbnail/@item.ProductImage" alt="...">
             <div class="caption">
                 <h3>@item.ProductTitle</h3>
                 @*<p>@item.productPrice.ToString("0,#تومان")</p>*@
-                <p><a href="#" class="btn btn-primary" onclick="addToBasket(@item.ProductID)" role="button">خرید</a> <a href="~/Product/ShowProduct/@item.AliasName" class="btn btn-default" role="button">جزئیات</a></p>
+                <p><a href="#" class="btn btn-primary" onclick="addToBasket(@item.ProductId)" role="button">خرید</a> <a href="~/Product/ShowProduct/@item.AliasName" class="btn btn-default" role="button">جزئیات</a></p>
             </div>
         </div>
     </div>
 }
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/content/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/content/Scripts/bootstrap.min.js"></script>
 <script>
     function addToBasket(id) {
         $(document).ready(function () {

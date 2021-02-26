@@ -28,7 +28,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="blog-details-desc">
                     <div class="article-image">
-                        <img src="~/NewsImages/Images/@Model.NewsImage" alt="image">
+                        <img src="~/Content/NewsImages/Images/@Model.NewsImage" alt="image">
                     </div>
 
                     <div class="article-content">
@@ -50,7 +50,7 @@
                                 {
                                     <li class="blocks-gallery-item">
                                         <figure>
-                                            <img src="~/NewsImages/Images/@item.ImageName" alt="image">
+                                            <img src="~/Content/NewsImages/Images/@item.ImageName" alt="image">
                                         </figure>
                                     </li>
                                 }
@@ -83,12 +83,12 @@
                                             <div class="comment-author vcard">
                                                 @if (item.UserId == null)
                                                 {
-                                                    <img src="~/Upload/Profile/no-photo.png" class="avatar" alt="image">
+                                                    <img src="~/Content/Upload/Profile/no-photo.png" class="avatar" alt="image">
                                                     <b class="fn">@item.Name</b>
                                                 }
                                                 else
                                                 {
-                                                    <img src="~/Upload/Profile/@item.User.Profile" class="avatar" alt="image">
+                                                    <img src="~/Content/Upload/Profile/@item.User.Profile" class="avatar" alt="image">
                                                     <b class="fn">@item.User.Name</b>
                                                 }
                                                 <span class="says">می گوید:</span>
@@ -125,12 +125,12 @@
                                                         <div class="comment-author vcard">
                                                             @if (item2.UserId == null)
                                                             {
-                                                                <img src="~/Upload/Profile/no-photo.png" class="avatar" alt="image">
+                                                                <img src="~/Content/Upload/Profile/no-photo.png" class="avatar" alt="image">
                                                                 <b class="fn">@item2.Name</b>
                                                             }
                                                             else
                                                             {
-                                                                <img src="~/Upload/Profile/@item2.User.Profile" class="avatar" alt="image">
+                                                                <img src="~/Content/Upload/Profile/@item2.User.Profile" class="avatar" alt="image">
                                                                 <b class="fn">@item2.User.Name</b>
                                                             }
                                                             <span class="says">می گوید:</span>
@@ -232,7 +232,7 @@
                             {
                                 <article class="item">
                                     <a href="/Blog/Contents/@item.AliasName" class="thumb">
-                                        <span class="fullimage cover" role="img" style="background-image:url(/NewsImages/thumbnail/@item.NewsImage)"></span>
+                                        <span class="fullimage cover" role="img" style="background-image:url(/Content/NewsImages/thumbnail/@item.NewsImage)"></span>
                                     </a>
                                     <div class="info">
                                         <time datetime="@item.AddedDate">@item.AddedDate.Value.ToString("dd/MM/yyy")</time>

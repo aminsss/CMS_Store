@@ -95,10 +95,10 @@ namespace Koshop.web.Areas.Admin.Controllers
                 if (NewsImage != null)
                 {
                     news.NewsImage = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(NewsImage.FileName);
-                    NewsImage.SaveAs(Server.MapPath("/NewsImages/Images/") + news.NewsImage);
+                    NewsImage.SaveAs(Server.MapPath("/Content/NewsImages/Images/") + news.NewsImage);
                     //---------------------resize Images ----------------------
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(150);
-                    img.Resize(Server.MapPath("/NewsImages/Images/") + news.NewsImage, Server.MapPath("/NewsImages/thumbnail/") + news.NewsImage);
+                    img.Resize(Server.MapPath("/Content/NewsImages/Images/") + news.NewsImage, Server.MapPath("/NewsImages/thumbnail/") + news.NewsImage);
                 }
 
                 //------------Create Gallery Product --------------
@@ -107,10 +107,10 @@ namespace Koshop.web.Areas.Admin.Controllers
                     foreach (HttpPostedFileBase file in newsGalleryPost)
                     {
                         string galleryname = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
-                        file.SaveAs(Server.MapPath("/NewsImages/Images/" + galleryname));
+                        file.SaveAs(Server.MapPath("/Content/NewsImages/Images/" + galleryname));
                         //---------------------resize Images  for Gallery----------------------
                         InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(350);
-                        img.Resize(Server.MapPath("/NewsImages/Images/") + galleryname, Server.MapPath("/NewsImages/thumbnail/") + galleryname);
+                        img.Resize(Server.MapPath("/Content/NewsImages/Images/") + galleryname, Server.MapPath("/NewsImages/thumbnail/") + galleryname);
                         news.NewsGallery.Add(new NewsGallery()
                         {
                             NewsId = news.NewsId,
@@ -181,15 +181,15 @@ namespace Koshop.web.Areas.Admin.Controllers
                 {
                     if (news.NewsImage != "no-photo.jpg")
                     {
-                        if (System.IO.File.Exists(Server.MapPath("/NewsImages/Images/" + news.NewsImage)))
-                            System.IO.File.Delete(Server.MapPath("/NewsImages/Images/" + news.NewsImage));
-                        if (System.IO.File.Exists(Server.MapPath("/NewsImages/thumbnail/" + news.NewsImage)))
-                            System.IO.File.Delete(Server.MapPath("/NewsImages/thumbnail/" + news.NewsImage));
+                        if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/Images/" + news.NewsImage)))
+                            System.IO.File.Delete(Server.MapPath("/Content/NewsImages/Images/" + news.NewsImage));
+                        if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/thumbnail/" + news.NewsImage)))
+                            System.IO.File.Delete(Server.MapPath("/Content/NewsImages/thumbnail/" + news.NewsImage));
                     }
                     news.NewsImage = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(newsImages.FileName);
-                    newsImages.SaveAs(Server.MapPath("/NewsImages/Images/" + news.NewsImage));
+                    newsImages.SaveAs(Server.MapPath("/Content/NewsImages/Images/" + news.NewsImage));
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(150);
-                    img.Resize(Server.MapPath("/NewsImages/Images/" + news.NewsImage), Server.MapPath("/NewsImages/Thumbnail/" + news.NewsImage));
+                    img.Resize(Server.MapPath("/Content/NewsImages/Images/" + news.NewsImage), Server.MapPath("/NewsImages/Thumbnail/" + news.NewsImage));
                 }
 
                 //------------Create Gallery Product --------------
@@ -201,10 +201,10 @@ namespace Koshop.web.Areas.Admin.Controllers
                     foreach (HttpPostedFileBase file in newsGalleryPost)
                     {
                         string galleryname = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
-                        file.SaveAs(Server.MapPath("/NewsImages/Images/" + galleryname));
+                        file.SaveAs(Server.MapPath("/Content/NewsImages/Images/" + galleryname));
                         //---------------------resize Images  for Gallery----------------------
                         InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(350);
-                        img.Resize(Server.MapPath("/NewsImages/Images/") + galleryname, Server.MapPath("/NewsImages/thumbnail/") + galleryname);
+                        img.Resize(Server.MapPath("/Content/NewsImages/Images/") + galleryname, Server.MapPath("/NewsImages/thumbnail/") + galleryname);
 
                         newsGalleries.Add(new NewsGallery()
                         {
@@ -267,11 +267,11 @@ namespace Koshop.web.Areas.Admin.Controllers
 
             foreach (var gallery in news.NewsGallery.ToList())
             {
-                if (System.IO.File.Exists(Server.MapPath("/NewsImages/Images/" + gallery.ImageName)))
-                    System.IO.File.Delete(Server.MapPath("/NewsImages/Images/" + gallery.ImageName));
+                if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/Images/" + gallery.ImageName)))
+                    System.IO.File.Delete(Server.MapPath("/Content/NewsImages/Images/" + gallery.ImageName));
 
-                if (System.IO.File.Exists(Server.MapPath("/NewsImages/thumbnail/" + gallery.ImageName)))
-                    System.IO.File.Delete(Server.MapPath("/NewsImages/thumbnail/" + gallery.ImageName));
+                if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/thumbnail/" + gallery.ImageName)))
+                    System.IO.File.Delete(Server.MapPath("/Content/NewsImages/thumbnail/" + gallery.ImageName));
 
                 _newsService.DeleteNewGalery(gallery);
             }
@@ -281,10 +281,10 @@ namespace Koshop.web.Areas.Admin.Controllers
             //-------------------delete Images--------------------
             if (news.NewsImage != "no-photo.jpg")
             {
-                if (System.IO.File.Exists(Server.MapPath("/NewsImages/Images/" + news.NewsImage)))
-                    System.IO.File.Delete(Server.MapPath("/NewsImages/Images/" + news.NewsImage));
-                if (System.IO.File.Exists(Server.MapPath("/NewsImages/thumbnail/" + news.NewsImage)))
-                    System.IO.File.Delete(Server.MapPath("/NewsImages/thumbnail/" + news.NewsImage));
+                if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/Images/" + news.NewsImage)))
+                    System.IO.File.Delete(Server.MapPath("/Content/NewsImages/Images/" + news.NewsImage));
+                if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/thumbnail/" + news.NewsImage)))
+                    System.IO.File.Delete(Server.MapPath("/Content/NewsImages/thumbnail/" + news.NewsImage));
             }
             _newsService.Delete(news);
             return Json(true,JsonRequestBehavior.AllowGet);
@@ -294,10 +294,10 @@ namespace Koshop.web.Areas.Admin.Controllers
         public Boolean deleteGalery(int id)
         {
             var gallery = _newsService.GetNewsGalleryById(id);
-            if (System.IO.File.Exists(Server.MapPath("/NewsImages/Images/" + gallery.ImageName)))
-                System.IO.File.Delete(Server.MapPath("/NewsImages/Images/" + gallery.ImageName));
-            if (System.IO.File.Exists(Server.MapPath("/NewsImages/thumbnail/" + gallery.ImageName)))
-                System.IO.File.Delete(Server.MapPath("/NewsImages/thumbnail/" + gallery.ImageName));
+            if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/Images/" + gallery.ImageName)))
+                System.IO.File.Delete(Server.MapPath("/Content/NewsImages/Images/" + gallery.ImageName));
+            if (System.IO.File.Exists(Server.MapPath("/Content/NewsImages/thumbnail/" + gallery.ImageName)))
+                System.IO.File.Delete(Server.MapPath("/Content/NewsImages/thumbnail/" + gallery.ImageName));
             _newsService.DeleteNewGalery(gallery);
             return true;
 

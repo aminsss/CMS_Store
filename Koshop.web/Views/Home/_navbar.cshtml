@@ -9,7 +9,7 @@
             <div class="zovio-responsive-menu">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="/Upload/13981208-14121808.png" alt="logo">
+                        <img src="/Content/Upload/13981208-14121808.png" alt="logo">
                     </a>
                 </div>
             </div>
@@ -20,7 +20,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="">
-                    <img src="/Upload/13981208-14121808.png" alt="logo">
+                    <img src="/Content/Upload/13981208-14121808.png" alt="logo">
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -39,7 +39,7 @@
                                     {
                                         var user = db.Users.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
                                         <li class="nav-item">
-                                            <a href="/Account/Profile" class="nav-link"><img src="~/Upload/Profile/@user.Profile" style="height: 24px;" class="img-circle img-responsive" /> @user.Name</a>
+                                            <a href="/Account/Profile" class="nav-link"><img src="~/Content/Upload/Profile/@user.Profile" style="height: 24px;" class="img-circle img-responsive" /> @user.Name</a>
                                         </li>
                                         if (user.RoleId == 1)
                                         {

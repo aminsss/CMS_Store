@@ -42,15 +42,15 @@ namespace Koshop.web.Areas.Admin.Controllers
                 {
                     //--------------------Creating names and saving to Main sarver----------------------------------
                     imagename = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
-                    file.SaveAs(Server.MapPath("/Modules/Images/") + imagename);
+                    file.SaveAs(Server.MapPath("/Content/Modules/Images/") + imagename);
 
                     //---------------------resize Images -----------------------------------------------------------
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(350);
-                    img.Resize(Server.MapPath("/Modules/Images/") + imagename, Server.MapPath("/Modules/Images/thumbnail/") + imagename);
+                    img.Resize(Server.MapPath("/Content/Modules/Images/") + imagename, Server.MapPath("/Modules/Images/thumbnail/") + imagename);
                 }
 
                 //saving new store and the images
-                return Json(new { status = "Done", src = "/Modules/Images/thumbnail/" + imagename, ImageName = imagename });
+                return Json(new { status = "Done", src = "/Content/Modules/Images/thumbnail/" + imagename, ImageName = imagename });
             }
             return Json(new { status = "Error" });
         }
@@ -200,10 +200,10 @@ namespace Koshop.web.Areas.Admin.Controllers
 
                     if (multiPictureModuleViewModel.ModuleImage != module.MultiPictureModule.Image && module.MultiPictureModule.Image != "no-photo.jpg")
                     {
-                        if (System.IO.File.Exists(Server.MapPath("/Modules/Images/" + module.MultiPictureModule.Image)))
-                            System.IO.File.Delete(Server.MapPath("/Modules/Images/" + module.MultiPictureModule.Image));
-                        if (System.IO.File.Exists(Server.MapPath("/Modules/Images/thumbnail/" + module.MultiPictureModule.Image)))
-                            System.IO.File.Delete(Server.MapPath("/Modules/Images/thumbnail/" + module.MultiPictureModule.Image));
+                        if (System.IO.File.Exists(Server.MapPath("/Content/Modules/Images/" + module.MultiPictureModule.Image)))
+                            System.IO.File.Delete(Server.MapPath("/Content/Modules/Images/" + module.MultiPictureModule.Image));
+                        if (System.IO.File.Exists(Server.MapPath("/Content/Modules/Images/thumbnail/" + module.MultiPictureModule.Image)))
+                            System.IO.File.Delete(Server.MapPath("/Content/Modules/Images/thumbnail/" + module.MultiPictureModule.Image));
                     }
 
                     //editing HtmlModule
@@ -282,10 +282,10 @@ namespace Koshop.web.Areas.Admin.Controllers
             var multiPictureItem = _multiPictureModuleService.GetItemsById(id);
             if (multiPictureItem.Image != imageName && multiPictureItem.Image != "no-photo.jpg")
             {
-                if (System.IO.File.Exists(Server.MapPath("/Modules/Images/" + imageName)))
-                    System.IO.File.Delete(Server.MapPath("/Modules/Images/" + imageName));
-                if (System.IO.File.Exists(Server.MapPath("/Modules/Images/thumbnail/" + imageName)))
-                    System.IO.File.Delete(Server.MapPath("/Modules/Images/thumbnail/" + imageName));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Modules/Images/" + imageName)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Modules/Images/" + imageName));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Modules/Images/thumbnail/" + imageName)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Modules/Images/thumbnail/" + imageName));
             }
             multiPictureItem.Image = imageName;
             _multiPictureModuleService.EditItems(multiPictureItem);
@@ -298,10 +298,10 @@ namespace Koshop.web.Areas.Admin.Controllers
             _multiPictureModuleService.DeleteItems(multiPictureItem);
             if (multiPictureItem.Image != "no-photo.jpg")
             {
-                if (System.IO.File.Exists(Server.MapPath("/Modules/Images/" + multiPictureItem.Image)))
-                    System.IO.File.Delete(Server.MapPath("/Modules/Images/" + multiPictureItem.Image));
-                if (System.IO.File.Exists(Server.MapPath("/Modules/Images/thumbnail/" + multiPictureItem.Image)))
-                    System.IO.File.Delete(Server.MapPath("/Modules/Images/thumbnail/" + multiPictureItem.Image));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Modules/Images/" + multiPictureItem.Image)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Modules/Images/" + multiPictureItem.Image));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Modules/Images/thumbnail/" + multiPictureItem.Image)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Modules/Images/thumbnail/" + multiPictureItem.Image));
             }
             return Json(true, JsonRequestBehavior.AllowGet);
         }

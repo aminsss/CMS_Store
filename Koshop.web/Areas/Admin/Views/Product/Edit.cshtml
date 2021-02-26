@@ -88,7 +88,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                    <img id="imgprdctlogo" width="250" height="250" src="/ProductImages/thumbnail/@Model.ProductImage" class="thumbnail pull-left" />
+                    <img id="imgprdctlogo" width="250" height="250" src="/Content/ProductImages/thumbnail/@Model.ProductImage" class="thumbnail pull-left" />
                 </div>
                 <br />
                 <div class="form-group">
@@ -140,7 +140,7 @@
                         @foreach (var galery in Model.ProductGallery)
                         {
                             <div class="col-md-6" id="image_@(galery.ProductGalleryId)">
-                                <img src="/ProductImages/thumbnail/@galery.ImageName" class="thumbnail " style="width:200px;height:112px; object-fit: contain; ">
+                                <img src="/Content/ProductImages/thumbnail/@galery.ImageName" class="thumbnail " style="width:200px;height:112px; object-fit: contain; ">
                                 <a class="btn btn-block btn-danger" style="width:200px;margin-bottom:20px" onclick="deleteImage(@galery.ProductGalleryId)">حذف</a>
                             </div>
                         }
@@ -196,12 +196,12 @@
 @section Script{
     <script src="/ckeditor/ckeditor.js"></script>
     <script src="/ckeditor/adapters/jquery.js"></script>
-    <script src="~/assets/plugins/ladda/dist/spin.min.js"></script>
-    <script src="~/assets/plugins/ladda/dist/ladda.min.js"></script>
-    <script src="~/assets/js/pages/ladda.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/spin.min.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/ladda.min.js"></script>
+    <script src="~/content/assets/js/pages/ladda.js"></script>
 
-    <script src="~/Scripts/textbox/jasny-bootstrap.js"></script>
-    <script src="~/Scripts/textbox/jasny-bootstrap.min.js"></script>
+    <script src="~/content/Scripts/textbox/jasny-bootstrap.js"></script>
+    <script src="~/content/Scripts/textbox/jasny-bootstrap.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -292,7 +292,7 @@
                 function (e) {
                     e.preventDefault();
                     $("#ProductImage").val("no-photo.jpg");
-                    $("#imgprdctlogo").attr("src", "/ProductImages/thumbnail/no-photo.jpg");
+                    $("#imgprdctlogo").attr("src", "/Content/ProductImages/thumbnail/no-photo.jpg");
                     $('#cleanImage').click();
                 });
         });
@@ -411,6 +411,6 @@
 }
 
 @section Head{
-    <link href="~/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+    <link href="~/content/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
 }
 

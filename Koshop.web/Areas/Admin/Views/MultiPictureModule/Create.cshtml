@@ -136,7 +136,7 @@ new SelectListItem() { Text = "غیر فعال", Value = bool.FalseString },
                         <br />
 
                         <div class="form-group col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                            <img id="imgprdctlogo" src="~/Modules/Images/thumbnail/no-photo.jpg" width="250" height="250" class="thumbnail pull-left" />
+                            <img id="imgprdctlogo" src="~/Content/Modules/Images/thumbnail/no-photo.jpg" width="250" height="250" class="thumbnail pull-left" />
                         </div>
                         <br />
                         <div class="form-group">
@@ -192,12 +192,12 @@ new SelectListItem() { Text = "غیر فعال", Value = bool.FalseString },
 @section Script{
     <script src="~/ckeditor/ckeditor.js"></script>
     <script src="~/ckeditor/adapters/jquery.js"></script>
-    <script src="~/assets/plugins/ladda/dist/spin.min.js"></script>
-    <script src="~/assets/plugins/ladda/dist/ladda.min.js"></script>
-    <script src="~/assets/js/pages/ladda.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/spin.min.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/ladda.min.js"></script>
+    <script src="~/content/assets/js/pages/ladda.js"></script>
 
-    <script src="~/Scripts/textbox/jasny-bootstrap.js"></script>
-    <script src="~/Scripts/textbox/jasny-bootstrap.min.js"></script>
+    <script src="~/content/Scripts/textbox/jasny-bootstrap.js"></script>
+    <script src="~/content/Scripts/textbox/jasny-bootstrap.min.js"></script>
     <script>
         $('#SendIcon').on('click',
             function (e) {
@@ -241,7 +241,7 @@ new SelectListItem() { Text = "غیر فعال", Value = bool.FalseString },
             function (e) {
                 e.preventDefault();
                 $("#ModuleImage").val("no-photo.png");
-                $("#imgprdctlogo").attr("src", "/Modules/Images/thumbnail/no-photo.jpg");
+                $("#imgprdctlogo").attr("src", "/Content/Modules/Images/thumbnail/no-photo.jpg");
                 $('#CleanImage').click();
             });
 
@@ -259,7 +259,7 @@ new SelectListItem() { Text = "غیر فعال", Value = bool.FalseString },
 }
 
 @section Head{
-    <link href="~/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+    <link href="~/content/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
 }
 
 

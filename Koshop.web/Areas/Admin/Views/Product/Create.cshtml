@@ -70,7 +70,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                    <img id="imgprdctlogo" src="~/ProductImages/thumbnail/no-photo.jpg" width="250" height="250" class="thumbnail pull-left" />
+                    <img id="imgprdctlogo" src="~/Content/ProductImages/thumbnail/no-photo.jpg" width="250" height="250" class="thumbnail pull-left" />
                 </div>
                 <br />
                 <div class="form-group">
@@ -168,12 +168,12 @@
 
 @section Script{
 
-    <script src="~/assets/plugins/ladda/dist/spin.min.js"></script>
-    <script src="~/assets/plugins/ladda/dist/ladda.min.js"></script>
-    <script src="~/assets/js/pages/ladda.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/spin.min.js"></script>
+    <script src="~/content/assets/plugins/ladda/dist/ladda.min.js"></script>
+    <script src="~/content/assets/js/pages/ladda.js"></script>
 
-    <script src="~/Scripts/textbox/jasny-bootstrap.js"></script>
-    <script src="~/Scripts/textbox/jasny-bootstrap.min.js"></script>
+    <script src="~/content/Scripts/textbox/jasny-bootstrap.js"></script>
+    <script src="~/content/Scripts/textbox/jasny-bootstrap.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -264,7 +264,7 @@
                 function (e) {
                     e.preventDefault();
                     $("#ProductImage").val("no-photo.png");
-                    $("#imgprdctlogo").attr("src", "/ProductImages/thumbnail/no-photo.jpg");
+                    $("#imgprdctlogo").attr("src", "/Content/ProductImages/thumbnail/no-photo.jpg");
                     $('#CleanImage').click();
                 });
         });
@@ -327,6 +327,6 @@
 }
 
 @section Head{
-    <link href="~/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+    <link href="~/content/assets/plugins/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
 }
 

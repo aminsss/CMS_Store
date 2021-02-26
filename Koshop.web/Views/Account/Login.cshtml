@@ -5,16 +5,6 @@
     var modulelist = db.Modules.Where(x => x.IsActive == true && x.ModulePage.Any(y => y.Menu.PageName == "LogInMenu")).ToList();
 }
 
-@foreach (var item in modulelist.Where(x => x.Position.PositionName == "Slider").OrderBy(z => z.DisplayOrder))
-{
-    @Html.Action(item.Component.ActionName, item.Component.ControllerName, new { @id = item.ModuleId })
-}
-
-@foreach (var item in modulelist.Where(x => x.Position.PositionName == "Top").OrderBy(z => z.DisplayOrder))
-{
-    @Html.Action(item.Component.ActionName, item.Component.ControllerName, new { @id = item.ModuleId })
-}
-
 
 @using (Html.BeginForm())
 {
@@ -24,7 +14,6 @@
 
     <hr>
     @Html.ValidationSummary(true, "", new { @class = "text-warning" })
-
 
     <div class="form-group">
         @Html.TextBoxFor(model => model.UserName, null, new { @class = "an-form-control light ltr", @placeholder = "موبایل" })
@@ -64,18 +53,12 @@
     <p><i class="ion-refresh"></i> رمز عبور را فراموش کرده اید؟<a href="/account/forgotPassword"> بازیابی رمز عبور </a></p>
     @*<p><i class="ion-ios-keypad"></i> ورود با<a href="/account/Logdispose">  یکبار رمز </a></p>*@
     <p><i class="ion-home"></i> بازگشت به<a href="/">  صفحه اصلی </a></p>
-
-}
-
-@foreach (var item in modulelist.Where(x => x.Position.PositionName == "Bottom").OrderBy(z => z.DisplayOrder))
-{
-    @Html.Action(item.Component.ActionName, item.Component.ControllerName, new { @id = item.ModuleId })
 }
 
 @section Script{
 
 }
 
-@section Css{
+@section Head{
     <title>سایت ایرمان کابینت - ورود</title>
 }

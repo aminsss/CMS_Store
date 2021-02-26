@@ -82,14 +82,14 @@ namespace Koshop.web.Controllers
                 {
                     var vFileName = DateTime.Now.ToString("yyyyMMdd-HHMMssff") +
                                     Path.GetExtension(upload.FileName).ToLower();
-                    var vFolderPath = Server.MapPath("/Upload/");
+                    var vFolderPath = Server.MapPath("/Content/Upload/CKEditor");
                     if (!Directory.Exists(vFolderPath))
                     {
                         Directory.CreateDirectory(vFolderPath);
                     }
                     vFilePath = Path.Combine(vFolderPath, vFileName);
                     upload.SaveAs(vFilePath);
-                    vImagePath = Url.Content("/Upload/" + vFileName);
+                    vImagePath = Url.Content("/Content/Upload/CKEditor/" + vFileName);
                     vMessage = "تصوير با موفقيت ذخيره شد";
                 }
             }

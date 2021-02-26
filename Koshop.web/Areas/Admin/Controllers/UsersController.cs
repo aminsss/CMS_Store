@@ -82,7 +82,7 @@ namespace Koshop.web.Areas.Admin.Controllers
                 if (file != null)
                 {
                     imagename = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
-                    file.SaveAs(Server.MapPath("/Upload/Profile/") + imagename);
+                    file.SaveAs(Server.MapPath("/Content/Upload/Profile/") + imagename);
                     //---------------------resize Images ----------------------
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(48);
                     img.Resize(Server.MapPath("/Upload/Profile/") + imagename, Server.MapPath("/Upload/Profile/thumbnail/") + imagename);
@@ -144,15 +144,15 @@ namespace Koshop.web.Areas.Admin.Controllers
                 {
                     if (user.Profile != "no-photo.png")
                     {
-                        if (System.IO.File.Exists(Server.MapPath("/Upload/Profile/" + user.Profile)))
-                            System.IO.File.Delete(Server.MapPath("/Upload/Profile/" + user.Profile));
-                        if (System.IO.File.Exists(Server.MapPath("/Upload/Profile/thumbnail/" + user.Profile)))
-                            System.IO.File.Delete(Server.MapPath("/Upload/Profile/thumbnail/" + user.Profile));
+                        if (System.IO.File.Exists(Server.MapPath("/Content/Upload/Profile/" + user.Profile)))
+                            System.IO.File.Delete(Server.MapPath("/Content/Upload/Profile/" + user.Profile));
+                        if (System.IO.File.Exists(Server.MapPath("/Content/Upload/Profile/thumbnail/" + user.Profile)))
+                            System.IO.File.Delete(Server.MapPath("/Content/Upload/Profile/thumbnail/" + user.Profile));
                     }
                     user.Profile = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
-                    file.SaveAs(Server.MapPath("/Upload/Profile/" + user.Profile));
+                    file.SaveAs(Server.MapPath("/Content/Upload/Profile/" + user.Profile));
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(150);
-                    img.Resize(Server.MapPath("/Upload/Profile/" + user.Profile), Server.MapPath("/Upload/Profile/thumbnail/" + user.Profile));
+                    img.Resize(Server.MapPath("/Content/Upload/Profile/" + user.Profile), Server.MapPath("/Upload/Profile/thumbnail/" + user.Profile));
                 }
                 _userService.Edit(user);
                 return RedirectToAction("Index");
@@ -184,10 +184,10 @@ namespace Koshop.web.Areas.Admin.Controllers
             User user = _userService.GetById(id);
             if (user.Profile != "no-photo.png")
             {
-                if (System.IO.File.Exists(Server.MapPath("/Upload/Profile/" + user.Profile)))
-                    System.IO.File.Delete(Server.MapPath("/Upload/Profile/" + user.Profile));
-                if (System.IO.File.Exists(Server.MapPath("/Upload/Profile/thumbnail/" + user.Profile)))
-                    System.IO.File.Delete(Server.MapPath("/Upload/Profile/thumbnail/" + user.Profile));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Upload/Profile/" + user.Profile)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Upload/Profile/" + user.Profile));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Upload/Profile/thumbnail/" + user.Profile)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Upload/Profile/thumbnail/" + user.Profile));
             }
             _userService.Delete(user);
             return Json(true,JsonRequestBehavior.AllowGet);

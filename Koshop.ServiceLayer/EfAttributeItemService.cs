@@ -37,6 +37,7 @@ namespace Koshop.ServiceLayer
 
         public void Add(AttributItem attributItem)
         {
+            attributItem.idfilter = attributItem.idfilter.Replace(" ", "");
             _unitOfWork.AttributItemRepository.Insert(attributItem);
             _unitOfWork.Save();
         }
@@ -55,6 +56,7 @@ namespace Koshop.ServiceLayer
 
         public void Edit(AttributItem attributItem)
         {
+            attributItem.idfilter = attributItem.idfilter.Replace(" ","");
             _unitOfWork.AttributItemRepository.Update(attributItem);
             _unitOfWork.Save();
         }

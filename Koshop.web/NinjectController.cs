@@ -11,7 +11,7 @@ using Ninject;
 
 namespace Ninject_MVC.Controllers
 {
-    public class NinjectController:DefaultControllerFactory
+    public class NinjectController : DefaultControllerFactory
     {
         private IKernel ninjectKernel;
 
