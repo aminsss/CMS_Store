@@ -113,7 +113,7 @@
                     <span class="field-validation-valid text-danger" data-valmsg-for="File.Content" data-valmsg-replace="true"></span>
                     <span class="field-validation-valid text-danger" data-valmsg-for="File" data-valmsg-replace="true"></span>
                     <br />
-                    <img src="~/Content/NewsImages/thumbnail/@Model.NewsImage" class="thumbnail" />
+                    <img src="~/Content/Upload/NewsImages/thumbnail/@Model.NewsImage" class="thumbnail" />
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
                     @foreach (var galery in Model.NewsGallery)
                     {
                         <div class="col-md-3" id="image_@(galery.NewsGalleryId)">
-                            <img src="~/Content/NewsImages/thumbnail/@galery.ImageName" class="thumbnail" style="width:150px; height:150px">
+                            <img src="~/Content/Upload/NewsImages/thumbnail/@galery.ImageName" class="thumbnail" style="width:150px; height:150px">
                             <a class="btn btn-block btn-danger" style="width:150px" onclick="deleteImage(@galery.NewsGalleryId)">حذف</a>
                         </div>
                     }

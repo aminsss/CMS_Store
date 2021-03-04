@@ -2536,7 +2536,7 @@ body, #page-content {
 }
 /*------------------------- Responsive End -------------------------*/
 .backgrkala {
-    background: url('/Content/ProductImages/thumbnail/no-photo.jpg') center center no-repeat;
+    background: url('/Content/Upload/productImages/thumbnail/no-photo.jpg') center center no-repeat;
     background-size: cover;
     object-fit: cover;
 }

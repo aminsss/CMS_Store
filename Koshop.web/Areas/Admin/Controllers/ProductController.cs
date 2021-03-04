@@ -94,23 +94,23 @@ namespace Koshop.web.Areas.Admin.Controllers
                 {
                     //--------------------Creating names and saving to Main sarver----------------------------------
                     imagename = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
-                    file.SaveAs(Server.MapPath("/Content/productImages/Images/") + imagename);
+                    file.SaveAs(Server.MapPath("/Content/Upload/productImages/Images/") + imagename);
 
                     //---------------------resize Images -----------------------------------------------------------
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(350);
-                    img.Resize(Server.MapPath("/Content/productImages/Images/") + imagename, Server.MapPath("/Content/productImages/thumbnail/") + imagename);
+                    img.Resize(Server.MapPath("/Content/Upload/productImages/Images/") + imagename, Server.MapPath("/Content/Upload/productImages/thumbnail/") + imagename);
 
                     //----------------------upload via ftp to download server --------------------------------------
-                    //FtpHelper.Upload(Server.MapPath("/Content/productImages/Images/") + imagename, "ProductImages/Images/" );
-                    //FtpHelper.Upload(Server.MapPath("/Content/productImages/thumbnail/") + imagename, "ProductImages/thumbnail/");
+                    //FtpHelper.Upload(Server.MapPath("/Content/Upload/productImages/Images/") + imagename, "ProductImages/Images/" );
+                    //FtpHelper.Upload(Server.MapPath("/Content/Upload/productImages/thumbnail/") + imagename, "ProductImages/thumbnail/");
 
                     //-----------------------deleting from MAin server----------------------------------------------
-                    //if ((System.IO.File.Exists(Server.MapPath("/Content/productImages/Images/") + imagename)))
-                    //    System.IO.File.Delete(Server.MapPath("/Content/productImages/Images/") + imagename);
+                    //if ((System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/Images/") + imagename)))
+                    //    System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/Images/") + imagename);
                 }
 
                 //saving new store and the images
-                return Json(new { status = "Done", src = "/Content/ProductImages/thumbnail/" + imagename, ImageName = imagename });
+                return Json(new { status = "Done", src = "/Content/Upload/productImages/thumbnail/" + imagename, ImageName = imagename });
             }
             return Json(new { status = "Error" });
         }
@@ -126,19 +126,19 @@ namespace Koshop.web.Areas.Admin.Controllers
                 {
                     //--------------------Creating names and saving to Main sarver----------------------------------
                     string galleryname = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
-                    file.SaveAs(Server.MapPath("/Content/ProductImages/Images/" + galleryname));
+                    file.SaveAs(Server.MapPath("/Content/Upload/productImages/Images/" + galleryname));
 
                     //---------------------resize Images -----------------------------------------------------------
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(300);
-                    img.Resize(Server.MapPath("/Content/productImages/Images/") + galleryname, Server.MapPath("/productImages/thumbnail/") + galleryname);
+                    img.Resize(Server.MapPath("/Content/Upload/productImages/Images/") + galleryname, Server.MapPath("/Content/Upload/productImages/thumbnail/") + galleryname);
 
                     //----------------------upload via ftp to download server --------------------------------------
-                    //FtpHelper.Upload(Server.MapPath("/Content/productImages/Images/") + galleryname, "ProductImages/Images/");
-                    //FtpHelper.Upload(Server.MapPath("/Content/productImages/thumbnail/") + galleryname, "ProductImages/thumbnail/");
+                    //FtpHelper.Upload(Server.MapPath("/Content/Upload/productImages/Images/") + galleryname, "ProductImages/Images/");
+                    //FtpHelper.Upload(Server.MapPath("/Content/Upload/productImages/thumbnail/") + galleryname, "ProductImages/thumbnail/");
 
                     //-----------------------deleting from MAin server----------------------------------------------
-                    if ((System.IO.File.Exists(Server.MapPath("/Content/productImages/Images/") + galleryname)))
-                        System.IO.File.Delete(Server.MapPath("/Content/productImages/Images/") + galleryname);
+                    //if ((System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/Images/") + galleryname)))
+                    //    System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/Images/") + galleryname);
                     names += galleryname + ",";
                 }
                 //saving new store and the images
@@ -388,11 +388,11 @@ namespace Koshop.web.Areas.Admin.Controllers
 
             foreach (var gallery in product.ProductGallery.ToList())
             {
-                if (System.IO.File.Exists(Server.MapPath("/Content/productImages/Images/" + gallery.ImageName)))
-                    System.IO.File.Delete(Server.MapPath("/Content/productImages/Images/" + gallery.ImageName));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/Images/" + gallery.ImageName)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/Images/" + gallery.ImageName));
 
-                if (System.IO.File.Exists(Server.MapPath("/Content/productImages/thumbnail/" + gallery.ImageName)))
-                    System.IO.File.Delete(Server.MapPath("/Content/productImages/thumbnail/" + gallery.ImageName));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/thumbnail/" + gallery.ImageName)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/thumbnail/" + gallery.ImageName));
 
                _productService.DeleteGallery(gallery);
             }
@@ -402,11 +402,11 @@ namespace Koshop.web.Areas.Admin.Controllers
             //-------------------------delete Images----------------------------------------
             if (product.ProductImage != "no-photo.jpg")
             {
-                if (System.IO.File.Exists(Server.MapPath("/Content/productImages/Images/" + product.ProductImage)))
-                    System.IO.File.Delete(Server.MapPath("/Content/productImages/Images/" + product.ProductImage));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/Images/" + product.ProductImage)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/Images/" + product.ProductImage));
 
-                if (System.IO.File.Exists(Server.MapPath("/Content/productImages/thumbnail/" + product.ProductImage)))
-                    System.IO.File.Delete(Server.MapPath("/Content/productImages/thumbnail/" + product.ProductImage));
+                if (System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/thumbnail/" + product.ProductImage)))
+                    System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/thumbnail/" + product.ProductImage));
             }
 
             //-----------------delete attribute ---------------------------------------------
@@ -426,10 +426,10 @@ namespace Koshop.web.Areas.Admin.Controllers
         public Boolean deleteGalery(int id)
         {
             var gallery = _productService.GetProductGalleryById(id);
-            if (System.IO.File.Exists(Server.MapPath("/Content/productImages/Images/" + gallery.ImageName)))
-                System.IO.File.Delete(Server.MapPath("/Content/productImages/Images/" + gallery.ImageName));
-            if (System.IO.File.Exists(Server.MapPath("/Content/productImages/thumbnail/" + gallery.ImageName)))
-                System.IO.File.Delete(Server.MapPath("/Content/productImages/thumbnail/" + gallery.ImageName));
+            if (System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/Images/" + gallery.ImageName)))
+                System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/Images/" + gallery.ImageName));
+            if (System.IO.File.Exists(Server.MapPath("/Content/Upload/productImages/thumbnail/" + gallery.ImageName)))
+                System.IO.File.Delete(Server.MapPath("/Content/Upload/productImages/thumbnail/" + gallery.ImageName));
             _productService.DeleteGallery(gallery);
 
             return true;

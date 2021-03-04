@@ -87,6 +87,7 @@ namespace Koshop.ServiceLayer
         public void DeleteGallery(ProductGallery productGallery)
         {
             _unitOfWork.ProductGalleryRepository.Delete(productGallery);
+            _unitOfWork.Save();
         }
 
         public ProductGallery GetProductGalleryById(int id)

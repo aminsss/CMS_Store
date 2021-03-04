@@ -4586,13 +4586,13 @@ input:checked + .sliderexist:before {
 }*/
 
 .backgrkala {
-    background: url('/Content/ProductImages/thumbnail/no-photo.jpg') center center no-repeat;
+    background: url('/Content/Upload/productImages/thumbnail/no-photo.jpg') center center no-repeat;
     background-size: cover;
     object-fit: cover;
 }
 
     .backgrstore {
-        background: url('/content/StoreImage/thumbnail/no-photo.png') center center no-repeat;
+        background: url('/Content/Upload/StoreImage/thumbnail/no-photo.png') center center no-repeat;
         background-size: cover;
         object-fit: cover;
     }

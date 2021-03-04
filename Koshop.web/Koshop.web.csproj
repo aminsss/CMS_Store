@@ -1980,8 +1980,8 @@
     <Content Include="Content\jasny-bootstrap.css" />
     <Content Include="Content\jasny-bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="Content\ProductImages\images\no-photo.jpg" />
-    <Content Include="Content\ProductImages\thumbnail\no-photo.jpg" />
+    <Content Include="Content\Upload\ProductImages\images\no-photo.jpg" />
+    <Content Include="Content\Upload\ProductImages\thumbnail\no-photo.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2314,8 +2314,8 @@
     <Content Include="Content\Koshop\assets\js\ui-bootstrap-tpls-0.13.4.min.js" />
     <Content Include="Content\Koshop\assets\js\ui-bootstrap-tpls-2.5.0.min.js" />
     <Content Include="Content\Koshop\assets\_scriptload.html" />
-    <Content Include="Content\NewsImages\Images\no-photo.jpg" />
-    <Content Include="Content\NewsImages\thumbnail\no-photo.jpg" />
+    <Content Include="Content\Upload\NewsImages\Images\no-photo.jpg" />
+    <Content Include="Content\Upload\NewsImages\thumbnail\no-photo.jpg" />
     <Content Include="Content\Upload\13981208-14121808.png" />
     <Content Include="Content\Upload\13981223-15123506.jpg" />
     <Content Include="Content\Upload\Profile\35ce6525ffe5434c841e514c40a8dfee.jpg" />
@@ -2424,8 +2424,8 @@
     <Content Include="Content\Scripts\textbox\respond.js" />
     <Content Include="Content\Scripts\textbox\respond.min.js" />
     <None Include="Content\Scripts\textbox\_references.js" />
-    <Content Include="Content\StoreImage\Images\no-photo.png" />
-    <Content Include="Content\StoreImage\thumbnail\no-photo.png" />
+    <Content Include="Content\Upload\StoreImage\Images\no-photo.png" />
+    <Content Include="Content\Upload\StoreImage\thumbnail\no-photo.png" />
     <Content Include="Content\Upload\Profile\no-photo.png" />
     <Content Include="Content\Upload\Profile\thumbnail\no-photo.png" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />

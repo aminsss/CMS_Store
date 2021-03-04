@@ -4,7 +4,7 @@
         <div class="well well-sm text-center">
             @Model.ProductTitle
         </div>
-        <img class="thumbnail pull-left" src="~/Content/ProductImages/images/@Model.ProductImage" width="220" />
+        <img class="thumbnail pull-left" src="~/Content/Upload/productImages/images/@Model.ProductImage" width="220" />
         @Html.Raw(Model.ProductDescription)
         <hr />
         @if(Model.Product_Galleries.Any())
@@ -12,7 +12,7 @@
             foreach(var item in Model.Product_Galleries.ToList())
             {
                 <div class="col-md-3">
-                    <img src="~/Content/ProductImages/thumbnail/@item.ImageName" />
+                    <img src="~/Content/Upload/productImages/thumbnail/@item.ImageName" />
                 </div>
             }
         }

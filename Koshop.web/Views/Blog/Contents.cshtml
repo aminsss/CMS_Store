@@ -28,7 +28,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="blog-details-desc">
                     <div class="article-image">
-                        <img src="~/Content/NewsImages/Images/@Model.NewsImage" alt="image">
+                        <img src="~/Content/Upload/NewsImages/Images/@Model.NewsImage" alt="image">
                     </div>
 
                     <div class="article-content">
@@ -50,7 +50,7 @@
                                 {
                                     <li class="blocks-gallery-item">
                                         <figure>
-                                            <img src="~/Content/NewsImages/Images/@item.ImageName" alt="image">
+                                            <img src="~/Content/Upload/NewsImages/Images/@item.ImageName" alt="image">
                                         </figure>
                                     </li>
                                 }
@@ -232,7 +232,7 @@
                             {
                                 <article class="item">
                                     <a href="/Blog/Contents/@item.AliasName" class="thumb">
-                                        <span class="fullimage cover" role="img" style="background-image:url(/Content/NewsImages/thumbnail/@item.NewsImage)"></span>
+                                        <span class="fullimage cover" role="img" style="background-image:url(/Content/Upload/NewsImages/thumbnail/@item.NewsImage)"></span>
                                     </a>
                                     <div class="info">
                                         <time datetime="@item.AddedDate">@item.AddedDate.Value.ToString("dd/MM/yyy")</time>

@@ -21,7 +21,7 @@ namespace Koshop.web.Areas.Admin.Controllers
             _newsGroupService = newsGroupService;
         }
         // GET: Admin/NewsGroup
-        public ActionResult Index(int page=1,int pageSize =1000,string searchString = "")
+        public ActionResult Index(int page=1 ,int pageSize =1000 ,string searchString = "")
         {
             var newsGroup = _newsGroupService.GetBySearch(page, pageSize, searchString);
             return View(newsGroup.Records);
