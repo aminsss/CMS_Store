@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <label for="Password">رمز عبور <small>(ضروری، حداقل سه و حداکثر 10 کاراکتر)</small></label>
                             <div>
-                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
                             </div>
                             @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })
                         </div>

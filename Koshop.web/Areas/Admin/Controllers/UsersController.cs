@@ -85,7 +85,7 @@ namespace Koshop.web.Areas.Admin.Controllers
                     file.SaveAs(Server.MapPath("/Content/Upload/Profile/") + imagename);
                     //---------------------resize Images ----------------------
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(48);
-                    img.Resize(Server.MapPath("/Upload/Profile/") + imagename, Server.MapPath("/Upload/Profile/thumbnail/") + imagename);
+                    img.Resize(Server.MapPath("/Content/Upload/Profile/") + imagename, Server.MapPath("/Content/Upload/Profile/thumbnail/") + imagename);
 
                 }
                 user.Profile = imagename;
@@ -152,7 +152,7 @@ namespace Koshop.web.Areas.Admin.Controllers
                     user.Profile = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
                     file.SaveAs(Server.MapPath("/Content/Upload/Profile/" + user.Profile));
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(150);
-                    img.Resize(Server.MapPath("/Content/Upload/Profile/" + user.Profile), Server.MapPath("/Upload/Profile/thumbnail/" + user.Profile));
+                    img.Resize(Server.MapPath("/Content/Upload/Profile/" + user.Profile), Server.MapPath("/Content/Upload/Profile/thumbnail/" + user.Profile));
                 }
                 _userService.Edit(user);
                 return RedirectToAction("Index");

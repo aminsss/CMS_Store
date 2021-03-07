@@ -194,8 +194,8 @@
 }
 
 @section Script{
-    <script src="/ckeditor/ckeditor.js"></script>
-    <script src="/ckeditor/adapters/jquery.js"></script>
+    <script src="~/content/ckeditor/ckeditor.js"></script>
+    <script src="~/content/ckeditor/adapters/jquery.js"></script>
     <script src="~/content/assets/plugins/ladda/dist/spin.min.js"></script>
     <script src="~/content/assets/plugins/ladda/dist/ladda.min.js"></script>
     <script src="~/content/assets/js/pages/ladda.js"></script>
@@ -335,10 +335,10 @@
             $('#ProductGroupId').val('@Model.ProductGroupId');
         });
 
-        $(function () {
+        @*$(function () {
             //Set the value of your TypeId <select> list to the element with value '33'
             $('#GroupModel').val('@Model.GroupModel');
-        });
+        });*@
 
         function deleteImage(id) {
             $.ajax({
