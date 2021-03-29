@@ -65,7 +65,7 @@
             }
             else
             {
-                <a href="/@item.PageName" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
+                <a href="@item.PageContetnt" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
             }
             @if (Model.Any(s => s.ParentId == item.MenuId))
             {
@@ -80,9 +80,13 @@
                                         {
                                             <a>@item2.MenuTitle</a>
                                         }
+                                        else if (item2.PageType == "2")
+                                        {
+                                            <a href="/Product/search?SlctGrpFilt=@item2.PageContetnt"> @item2.MenuTitle</a>
+                                        }
                                         else
                                         {
-                                            <a href="/@item2.PageName"> @item2.MenuTitle</a>
+                                            <a href="@item2.PageContetnt"> @item2.MenuTitle</a>
                                         }
                                     </li>
                                     @if (Model.Any(s => s.ParentId == item2.MenuId))
@@ -94,9 +98,13 @@
                                                 {
                                                     <a>@item3.MenuTitle</a>
                                                 }
+                                                else if (item3.PageType == "2")
+                                                {
+                                                    <a href="/Product/search?SlctGrpFilt=@item3.PageContetnt"> @item3.MenuTitle</a>
+                                                }
                                                 else
                                                 {
-                                                    <a href="/@item3.PageName"> @item3.MenuTitle</a>
+                                                    <a href="@item3.PageContetnt"> @item3.MenuTitle</a>
                                                 }
                                             </li>
                                         }
@@ -109,8 +117,8 @@
 
                     </li>
                     @*<li>
-                        <img class="menulaptopimage" src="~/content/Koshop/assets/img/laptopmenu.png" alt="لپ تاپ Laptop">
-                    </li>*@
+                            <img class="menulaptopimage" src="~/content/Koshop/assets/img/laptopmenu.png" alt="لپ تاپ Laptop">
+                        </li>*@
                 </ul>
             }
 

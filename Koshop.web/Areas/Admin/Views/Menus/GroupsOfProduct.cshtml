@@ -9,7 +9,7 @@
     {
         foreach (var item in product_Groups)
         {
-            <option value="@item.ProductGroupId">@string.Concat(Enumerable.Repeat(" - ", Convert.ToInt32(item.Depth))) @item.GroupTitle </option>
+            <option value="@item.GroupTitle.Trim().Replace(" ","-")">@string.Concat(Enumerable.Repeat(" - ", Convert.ToInt32(item.Depth))) @item.GroupTitle </option>
             if (Model.Any(s => s.ParentId == item.ProductGroupId))
             {
                 @ShowTree(Model.Where(s => s.ParentId == item.ProductGroupId));

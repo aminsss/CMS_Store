@@ -39,15 +39,21 @@
                                     <div class="panel-body an-bodydetail" id="kala_@item.ProductId" name="kala_@item.ProductId">
                                         @foreach (var detG in item.ProductGroup.DetailGroups)
                                         {
-                                            <span>@detG.Name</span>
-                                            foreach (var detI in detG.DetailItem)
+                                            if (detG.DetailItem.Any(x => x.ProductDetail.Any(y => y.ProductId == item.ProductId)))
                                             {
-                                                if (!detI.ProductDetail.FirstOrDefault(x => x.ProductId == item.ProductId).Value.IsEmpty())
+                                                <span>@detG.Name</span>
+                                                foreach (var detI in detG.DetailItem)
                                                 {
-                                                <span>
-                                                    <span>@detI.DetailTitle</span>
-                                                    <label>@detI.ProductDetail.FirstOrDefault(x => x.ProductId == item.ProductId).Value </label>
-                                                </span>
+                                                    if (detI.ProductDetail.FirstOrDefault(x => x.ProductId == item.ProductId) != null)
+                                                    {
+                                                        if (!detI.ProductDetail.FirstOrDefault(x => x.ProductId == item.ProductId).Value.IsEmpty())
+                                                        {
+                                                            <span>
+                                                                <span>@detI.DetailTitle</span>
+                                                                <label>@detI.ProductDetail.FirstOrDefault(x => x.ProductId == item.ProductId).Value </label>
+                                                            </span>
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
@@ -55,7 +61,7 @@
                                 </div>
                                 <div class="an-kalabody an-tab-container">
                                     <div class=" an-listing-single">
-                                        <a role="button" @*href="@Url.Action("explore","details",new { @id = item.AliasName })"*@ target="_blank">
+                                        <a role="button" href="@Url.Action("explore","details",new { @id = item.AliasName })"target="_blank" >
                                             @if (count == "0")
                                             {
                                                 <div class="existence-text "> ناموجود در فروشگاه </div>
@@ -64,7 +70,7 @@
                                         </a>
                                     </div> <!-- end listing-single -->
                                     <div class="an-kalaname">
-                                        <p><a target="_blank" @*href="@Url.Action("explore","details",new { @id=item.AliasName})"*@>@Html.DisplayFor(modelitem => item.ProductTitle)</a></p>
+                                        <p><a target="_blank" href="@Url.Action("explore","details",new { @id=item.AliasName})">@Html.DisplayFor(modelitem => item.ProductTitle)</a></p>
                                         <div class="an-priceaverage">
                                             @*@if (item.StoresProduct.Any())
                                             {

@@ -37,6 +37,7 @@ namespace Koshop.ServiceLayer
 
         public void Add(NewsGroup newsGroup)
         {
+            newsGroup.AliasName = newsGroup.AliasName.Replace(" ", "");
             newsGroup.AddedDate = DateTime.Now;
             newsGroup.ModifiedDate = DateTime.Now;
             _unitOfWork.NewsGroupRepository.Insert(newsGroup);
@@ -48,6 +49,7 @@ namespace Koshop.ServiceLayer
             //edit the children of selected Group
             EditChild(newsGroup);
             //Update the selected Group
+            newsGroup.AliasName = newsGroup.AliasName.Replace(" ", "");
             newsGroup.ModifiedDate = DateTime.Now;
             _unitOfWork.NewsGroupRepository.Update(newsGroup);
             _unitOfWork.Save();

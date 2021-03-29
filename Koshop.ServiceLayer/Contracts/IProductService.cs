@@ -20,6 +20,8 @@ namespace Koshop.ServiceLayer.Contracts
         IEnumerable<Product> Products();
         IEnumerable<Product> GetProducts(string searchString);
 
+        IEnumerable<Product> GetByGroupId(int groupId);
+
         //product Tags
         void DeleteTagsByProduct(int? productId);
         void AddTags(IList<ProductTag> productTags);

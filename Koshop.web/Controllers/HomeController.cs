@@ -15,12 +15,16 @@ namespace Koshop.web.Controllers
         private IMenuService _menuService;
         private IUserService _userService;
         private IMessageService _messageService;
+        private IProductGroupService _productGroupService;
+        private IProductService _productService;
 
-        public HomeController(IMenuService menuService,IUserService userService,IMessageService messageService)
+        public HomeController(IMenuService menuService,IUserService userService,IMessageService messageService,IProductGroupService productGroupService,IProductService productService)
         {
             _menuService = menuService;
             _userService = userService;
             _messageService = messageService;
+            _productGroupService = productGroupService;
+            _productService = productService;
         }
 
         [Route("{id?}")]
@@ -43,6 +47,22 @@ namespace Koshop.web.Controllers
         public ActionResult _navbar()
         {
             return PartialView(_menuService.menus());
+        }
+
+        public ActionResult _groupNavbar()
+        {
+            return PartialView(_productGroupService.ProductGroups());
+        }
+
+        public ActionResult _groupDirectory(string id)
+        {
+            ViewBag.groupSelected = id;
+            return PartialView(_productGroupService.ProductGroups());
+        }
+
+        public ActionResult _ProductOffer(int id)
+        {
+            return PartialView(_productService.GetByGroupId(id));
         }
 
         public JsonResult GetMessage(string name, string email, string phone_number, string msg_subject, string message)

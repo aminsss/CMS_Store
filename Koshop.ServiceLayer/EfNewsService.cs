@@ -43,6 +43,7 @@ namespace Koshop.ServiceLayer
         }
         public void Add(News news)
         {
+            news.AliasName = news.AliasName.Replace(" ", "");
             news.AddedDate = DateTime.Now;
             news.ModifiedDate = DateTime.Now;
             _unitOfWork.NewsRepository.Insert(news);
@@ -68,6 +69,7 @@ namespace Koshop.ServiceLayer
 
         public void Edit(News news)
         {
+            news.AliasName = news.AliasName.Replace(" ", "");
             _unitOfWork.NewsRepository.Update(news);
             _unitOfWork.Save();
         }

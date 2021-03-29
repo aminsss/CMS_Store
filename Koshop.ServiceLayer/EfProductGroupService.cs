@@ -32,6 +32,7 @@ namespace Koshop.ServiceLayer
 
         public void Add(ProductGroup productGroup)
         {
+            productGroup.AliasName = productGroup.AliasName.Replace(" ", "");
             _unitOfWork.ProductGroupRepository.Insert(productGroup);
             _unitOfWork.Save();
         }
@@ -65,6 +66,7 @@ namespace Koshop.ServiceLayer
             //edit the children of selected Group
             ChildEdit(productGroup);
             //edit the selected Group
+            productGroup.AliasName = productGroup.AliasName.Replace(" ", "");
             _unitOfWork.ProductGroupRepository.Update(productGroup);
             _unitOfWork.Save();
         }

@@ -1781,6 +1781,7 @@
     <Content Include="Content\ckeditor\_source\themes\default\theme.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\groupNavbar.css" />
     <Content Include="Content\Images\flags\ad.png" />
     <Content Include="Content\Images\flags\ae.png" />
     <Content Include="Content\Images\flags\af.png" />
@@ -2506,6 +2507,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2568,6 +2570,12 @@
     </Content>
     <Content Include="Views\Partials\StickySocialMediaModule.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Home\_groupNavbar.cshtml" />
+    <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\Stores\storeslist.cshtml" />
+    <Content Include="Views\Stores\test.cshtml" />
+    <Content Include="Views\Home\_groupDirectory.cshtml" />
+    <Content Include="Views\Home\_ProductOffer.cshtml" />
     <None Include="Web References\irSample\v2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

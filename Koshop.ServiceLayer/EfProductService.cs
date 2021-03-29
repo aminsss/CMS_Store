@@ -43,6 +43,7 @@ namespace Koshop.ServiceLayer
 
         public void Add(Product product)
         {
+            product.AliasName = product.AliasName.Replace(" ", "");
             product.AddedDate = DateTime.Now;
             product.ModifiedDate = DateTime.Now;
             _unitOfWork.ProductRepository.Insert(product);
@@ -63,6 +64,7 @@ namespace Koshop.ServiceLayer
 
         public void Edit(Product product)
         {
+            product.AliasName = product.AliasName.Replace(" ", "");
             product.ModifiedDate = DateTime.Now;
             _unitOfWork.ProductRepository.Update(product);
             _unitOfWork.Save();
@@ -123,6 +125,9 @@ namespace Koshop.ServiceLayer
             return _unitOfWork.ProductRepository.Get();
         }
 
-        
+        public IEnumerable<Product> GetByGroupId(int groupId)
+        {
+            return _unitOfWork.ProductRepository.Get(x=>x.ProductGroupId == groupId);
+        }
     }
 }
