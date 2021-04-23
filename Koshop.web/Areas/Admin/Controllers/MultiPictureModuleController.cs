@@ -46,7 +46,7 @@ namespace Koshop.web.Areas.Admin.Controllers
 
                     //---------------------resize Images -----------------------------------------------------------
                     InsertShowImage.ImageResizer img = new InsertShowImage.ImageResizer(350);
-                    img.Resize(Server.MapPath("/Content/Modules/Images/") + imagename, Server.MapPath("/Modules/Images/thumbnail/") + imagename);
+                    img.Resize(Server.MapPath("/Content/Modules/Images/") + imagename, Server.MapPath("/Content/Modules/Images/thumbnail/") + imagename);
                 }
 
                 //saving new store and the images

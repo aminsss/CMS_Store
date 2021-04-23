@@ -6,14 +6,14 @@
     Koshop.DataLayer.AppDbContext db = new Koshop.DataLayer.AppDbContext();
     int? userID = ViewBag.UserID;
     int jamkalaha = Convert.ToInt32(Model.PageCount * Model.Count());
-    //string yadak = "همه-قطعات";
-    //if (ViewBag.yadak != null && ViewBag.yadak != "")
-    //{
-    //    yadak = ViewBag.yadak;
-    //}
 }
 
 @*@Html.Hidden("yadak", yadak)*@
+@foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Slider" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
+{
+    @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
+}
+
 <div id="all-e-map">
     <div id="catdiv">
         <div class="an-inner-banner ">
@@ -23,19 +23,19 @@
                         <div class="search-fields">
                             <div class="row">
                                 @*<div class="col-md-3">
-                                    <div class="an-default-select-wrapper location">
-                                        <select id="slcstateList">
-                                            @Html.Action("getstate", new { @id = ViewBag.state, @city = ViewBag.city })
-                                        </select>
-                                    </div>
-                                </div>*@
+                                        <div class="an-default-select-wrapper location">
+                                            <select id="slcstateList">
+                                                @Html.Action("getstate", new { @id = ViewBag.state, @city = ViewBag.city })
+                                            </select>
+                                        </div>
+                                    </div>*@
                                 <div class="col-md-3">
-                                    <div class="an-default-select-wrapper">
-                                        <select id="SlctGrpList">
-                                            @Html.Action("GroupsOfProduct", new { @id = ViewBag.SlctGrpFilt })
-                                        </select>
+                                       <div class="an-default-select-wrapper">
+                                            <select id="SlctGrpList">
+                                                @Html.Action("GroupsOfProduct", new { @id = ViewBag.SlctGrpFilt })
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="col-md-9">
                                     @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "an-form-control", @placeholder = "جستجوی نام کالا", @autocomplete = "off" })
                                 </div>
@@ -58,25 +58,24 @@
         <div id="productdiv" class="an-page-content back-pagesearch">
             <div class="container">
                 <div class="row">
+                    @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Top" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
+                    {
+                        @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
+                    }
                     <div class="col-md-3  an-filterdiv">
                         <div class="an-sidebar">
                             <div id="slccitydiv"></div>
 
                             <div id="OthFilter" class="an-form"></div>
 
-                            <div class="panel-swichbutton">
-                                <label class="switch">
-                                    <input id="onlyexist-check" type="checkbox" />
-                                    <span class="sliderexist round"></span>
-                                </label>
-                                <span>
-                                    فقط کالاهای دارای فروشنده
-                                </span>
-                            </div>
-
                             <div id="slcyadakdiv"></div>
 
                             <div id="yadakFilter" class="an-form"></div>
+
+                            @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Side" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
+                            {
+                                @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
+                            }
 
                         </div> <!-- end an-sidebar -->
                     </div>
@@ -86,10 +85,6 @@
                                 <div class="an-tab-container">
                                     <div class="tab-nav pdside-10">
                                         <div class="row">
-                                            @*<ul class="nav nav-tabs" role="tablist">
-                                                    <li role="presentation" class="active"><a style="padding:5px" href="#lowest-detail" aria-controls="lowest-price" role="tab" data-toggle="tab" aria-expanded="false"><i class="ion-ios-grid-view-outline"></i></a></li>
-                                                    <li role="presentation" class=""><a style="padding:5px" href="#highest-detail" aria-controls="highest-price" role="tab" data-toggle="tab" aria-expanded="false"><i class="ion-android-list"></i></a></li>
-                                                </ul>*@
                                             <h3>جستجوی <span id="titlegropsearch">کالا</span><span id="counter"> (@Response.Headers["Counter"] کالا ) </span></h3>
                                         </div>
                                         <div class="row">
@@ -111,16 +106,21 @@
                                 }
                             </div>
                             <div id="dvscript"></div>
+                            @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Content" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
+                            {
+                                @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
+                            }
                         </div>
                     </div>
+                    @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Bottom" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
+                    {
+                        @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
+                    }
                 </div>
             </div>
         </div>
     }
-
 </div>
-
-
 @section Script{
 
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
@@ -128,7 +128,7 @@
 }
 
 @section Head{
-    <title>کوشاپ - جستجوی کالا</title>
+    <title>فروشگاه بای اُک - جستجوی کالا</title>
 }
 
 @section footer{

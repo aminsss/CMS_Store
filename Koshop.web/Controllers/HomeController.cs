@@ -49,20 +49,12 @@ namespace Koshop.web.Controllers
             return PartialView(_menuService.menus());
         }
 
-        public ActionResult _groupNavbar()
-        {
-            return PartialView(_productGroupService.ProductGroups());
-        }
+        
 
         public ActionResult _groupDirectory(string id)
         {
             ViewBag.groupSelected = id;
             return PartialView(_productGroupService.ProductGroups());
-        }
-
-        public ActionResult _ProductOffer(int id)
-        {
-            return PartialView(_productService.GetByGroupId(id));
         }
 
         public JsonResult GetMessage(string name, string email, string phone_number, string msg_subject, string message)

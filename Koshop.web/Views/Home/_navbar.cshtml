@@ -13,9 +13,8 @@
     <a class="navbar-brand" href="/"><img src="~/content/Koshop/assets/img/logo-final-white.png" alt=""></a>
 </div>
 
-
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul id="citychooser" class="nav navbar-nav">
+    <ul id="menuss" class="nav navbar-nav">
         @MenuTree(Model.Where(s => s.Depth == 0 && s.MenuGroup.MenuType == "MainMenu"))
         @*<li class="nav-item ">
                 @if (!User.Identity.IsAuthenticated)
@@ -48,7 +47,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-left">
 
-        <li><a class="an-btn an-btn-default" href="/account/register"><i class="typcn typcn-location-outline"></i><span>ثبت نام</span></a></li>
+        <li><a class="an-btn an-btn-default" href="http://rapcosoft.com/" target="_blank"><i class="typcn typcn-location-outline"></i><span>سایت راپکو</span></a></li>
         <li><a class="sign-up-link" href="/admin"><i class="typcn typcn-user"></i><span>ورود به مدیریت</span></a></li>
     </ul>
 </div><!-- /.navbar-collapse -->
@@ -59,13 +58,25 @@
     foreach (var item in menu.OrderBy(x => x.DisplayOrder).Where(y => y.IsActive == true))
     {
         <li class="dropdown ">
-            @if (item.PageType == "4")
+            @if (item.PageType == "1")
+            {
+                <a href="/@item.PageName"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle</a>
+            }
+            else if (item.PageType == "2")
+            {
+                <a href="/Product/search?SlctGrpFilt=@item.PageContetnt" ><i class="ion-android-laptop color-moto"></i>@item.MenuTitle</a>
+            }
+            else if (item.PageType == "3")
+            {
+                <a href="/Product/search?SlctGrpFilt=@item.PageContetnt"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
+            }
+            else if (item.PageType == "4")
             {
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
             }
-            else
+            else if (item.PageType == "5")
             {
-                <a href="@item.PageContetnt" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
+                <a href="/@item.PageContetnt"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
             }
             @if (Model.Any(s => s.ParentId == item.MenuId))
             {
@@ -76,15 +87,23 @@
                             <div class="lisline">
                                 <ul class="droplist">
                                     <li class="boldmenu">
-                                        @if (item2.PageType == "4")
+                                        @if (item2.PageType == "1")
                                         {
-                                            <a>@item2.MenuTitle</a>
+                                            <a href="@item2.PageName"> @item2.MenuTitle</a>
                                         }
                                         else if (item2.PageType == "2")
                                         {
                                             <a href="/Product/search?SlctGrpFilt=@item2.PageContetnt"> @item2.MenuTitle</a>
                                         }
-                                        else
+                                        else if (item2.PageType == "3")
+                                        {
+                                            <a href="/Product/search?SlctGrpFilt=@item2.PageContetnt"> @item2.MenuTitle</a>
+                                        }
+                                        else if (item2.PageType == "4")
+                                        {
+                                            <a>@item2.MenuTitle</a>
+                                        }
+                                        else if (item2.PageType == "5")
                                         {
                                             <a href="@item2.PageContetnt"> @item2.MenuTitle</a>
                                         }
@@ -94,18 +113,26 @@
                                         foreach (var item3 in Model.Where(s => s.ParentId == item2.MenuId))
                                         {
                                             <li>
-                                                @if (item3.PageType == "4")
-                                                {
-                                                    <a>@item3.MenuTitle</a>
-                                                }
-                                                else if (item3.PageType == "2")
-                                                {
+                                                 @if (item3.PageType == "1")
+                                                 {
+                                                    <a href="@item3.PageName"> @item3.MenuTitle</a>
+                                                 }
+                                                 else if (item3.PageType == "2")
+                                                 {
                                                     <a href="/Product/search?SlctGrpFilt=@item3.PageContetnt"> @item3.MenuTitle</a>
-                                                }
-                                                else
-                                                {
-                                                    <a href="@item3.PageContetnt"> @item3.MenuTitle</a>
-                                                }
+                                                 }
+                                                 else if (item3.PageType == "3")
+                                                 {
+                                                   <a href="/Product/search?SlctGrpFilt=@item3.PageContetnt"> @item3.MenuTitle</a>
+                                                 }
+                                                 else if (item3.PageType == "4")
+                                                 {
+                                                   <a>@item3.MenuTitle</a>
+                                                 }
+                                                 else if (item3.PageType == "5")
+                                                 {
+                                                   <a href="@item3.PageContetnt"> @item3.MenuTitle</a>
+                                                 }
                                             </li>
                                         }
 

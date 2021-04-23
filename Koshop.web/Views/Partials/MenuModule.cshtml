@@ -10,11 +10,11 @@
     {
         if (item.PageType != "5")
         {
-            <li><a href="/page/@item.PageName">@item.MenuTitle</a></li>
+            <li><a href="@item.PageContetnt">@item.MenuTitle</a></li>
         }
-        else
+        else if(item.PageType != "1")
         {
-            <li><a href="/page/@item.PageName">@item.MenuTitle</a></li>
+            <li><a href="/@item.PageName">@item.MenuTitle</a></li>
         }
     }
 </ul>

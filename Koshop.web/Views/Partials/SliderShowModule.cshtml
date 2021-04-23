@@ -1,30 +1,27 @@
 ﻿@model Koshop.DomainClasses.MultiPictureModule
 
-<div class="home-slides owl-carousel owl-theme">
-    @foreach (var item in Model.MultiPictureItems)
-    {
 
-        <div id="item_@item.MultiPictureItemsId" class="main-banner jarallax" data-jarallax='{"speed": 0.01}'>
-            <div class="d-table">
-                <div class="d-table-cell">
+<div class="an-header-banner with-slider">
+    <div class="owl-carousel home-slider">
+        @foreach (var item in Model.MultiPictureItems)
+        {
+            <div id="item_@item.MultiPictureItemsId">
+                <div class="home-banner-content" style="background: url('/Content/Modules/Images/@item.Image') center center no-repeat;
+                     background-size: cover;">
+                    <div class="overlay"></div>
                     <div class="container">
-                        <div class="main-banner-content">
-                            <p class="sub-title text-white">@item.Title</p>
-                            <h1>@item.TitleBold</h1>
-                            <p>@item.Description</p>
-
-                            <div class="btn-box">
-                                <a href="@item.Link" target="_blank" class="default-btn">نقل و قول <span></span></a>
-                                <a href="@item.LinkMore" class="optional-btn">اطلاعات بیشتر <span></span></a>
-                            </div>
+                        <div class="details">
+                            <h2 class="">@item.TitleBold</h2>
+                            <h1 class="">@item.Title</h1>
+                            <p class="">@item.Description</p>
+                            <a href="@item.Link" class="an-btn an-btn-default">دیدن محصولات بیشتر</a>
+                            <a href="@item.LinkMore" class="an-btn an-btn-black">دیدن امکانات بیشتر</a>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
-@foreach (var item in Model.MultiPictureItems)
-{
-    <script>document.getElementById("item_@item.MultiPictureItemsId").setAttribute("style", "background-image:url(Modules/Images/@item.Image");</script>
-}
+

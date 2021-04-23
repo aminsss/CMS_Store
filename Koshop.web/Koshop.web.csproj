@@ -1980,6 +1980,8 @@
     <Content Include="Content\Images\flags\zw.png" />
     <Content Include="Content\jasny-bootstrap.css" />
     <Content Include="Content\jasny-bootstrap.min.css" />
+    <Content Include="Content\Koshop\assets\img\icon-arrow-left.png" />
+    <Content Include="Content\Koshop\assets\img\icon-arrow-right.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Upload\ProductImages\images\no-photo.jpg" />
     <Content Include="Content\Upload\ProductImages\thumbnail\no-photo.jpg" />
@@ -2489,6 +2491,11 @@
     <Compile Include="Areas\Admin\Controllers\StatisticsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Classes\DataAnnotations.cs" />
+    <Compile Include="Content\Resources\Titles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Titles.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\infoController.cs" />
     <Compile Include="Controllers\PageController.cs" />
@@ -2497,7 +2504,6 @@
     <Compile Include="Classes\ImageResizer.cs" />
     <Compile Include="Classes\PartialToStringClass.cs" />
     <Compile Include="Classes\PersianCulture.cs" />
-    <Compile Include="Classes\ProductGroupsClass.cs" />
     <Compile Include="Classes\SendEmailGmail.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
@@ -2570,12 +2576,14 @@
     </Content>
     <Content Include="Views\Partials\StickySocialMediaModule.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
-    <Content Include="Views\Home\_groupNavbar.cshtml" />
+    <Content Include="Views\Partials\StickyGroupsModule.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
     <Content Include="Views\Stores\storeslist.cshtml" />
     <Content Include="Views\Stores\test.cshtml" />
     <Content Include="Views\Home\_groupDirectory.cshtml" />
-    <Content Include="Views\Home\_ProductOffer.cshtml" />
+    <Content Include="Views\Partials\ProductOfferModule.cshtml" />
+    <Content Include="Views\Partials\ProductOfferSliderModule.cshtml" />
+    <Content Include="Views\Partials\CategoryModule.cshtml" />
     <None Include="Web References\irSample\v2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2626,6 +2634,12 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Koshop_web_irSample_v2</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Resources\Titles.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Titles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

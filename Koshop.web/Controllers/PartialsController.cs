@@ -22,11 +22,36 @@ namespace Koshop.web.Controllers
         {
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
         }
-        public ActionResult AboutModule(int id)
+        public ActionResult HtmlModule(int? id)
+        {
+            return PartialView(_moduleService.GetById(id));
+        }
+        public ActionResult NewsletterModule(int? id)
+        {
+            return PartialView(_moduleService.GetById(id));
+        }
+        public ActionResult ProductOfferModule(int id)
+        {
+            return PartialView(_moduleService.GetById(id));
+        }
+        public ActionResult StickyGroupsModule(int id)
+        {
+            return PartialView(_moduleService.GetById(id));
+        }
+        public ActionResult ProductOfferSliderModule(int id)
+        {
+            return PartialView(_multiPictureModuleService.GetByModuleId(id));
+        }
+        public ActionResult CategoryModule(int id)
         {
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
         }
 
+
+        public ActionResult AboutModule(int id)
+        {
+            return PartialView(_multiPictureModuleService.GetByModuleId(id));
+        }
         public ActionResult ServiceModule(int id)
         {
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
@@ -67,15 +92,7 @@ namespace Koshop.web.Controllers
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
         }
 
-        public ActionResult HtmlModule(int? id)
-        {
-            return PartialView(_moduleService.GetById(id));
-        }
-
-        public ActionResult NewsletterModule(int? id)
-        {
-            return PartialView(_moduleService.GetById(id));
-        }
+        
 
         public ActionResult MenuModule(int? id)
         {
