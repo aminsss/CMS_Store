@@ -169,19 +169,21 @@ namespace Koshop.web.Controllers
 
         public ActionResult GroupsTreeView(string id)
         {
-            if (id != null)
+            IQueryable<ProductGroup> groupsList = null;
+            if (id != null && id != string.Empty)
             {
                 ViewBag.groupSelected = id.Replace(" ", "-");
                 var groupSelected = db.ProductGroups.Where(x => x.GroupTitle == id.Replace("-", " ")).FirstOrDefault();
                 ViewBag.groupSelectedParentId = groupSelected.ParentId;
                 var allParents = groupSelected.Path.Split('/').Select(int.Parse).ToList();
-                if (groupSelected != null)
-                {
-                    var groupsList = db.ProductGroups.Where(x => x.ParentId == groupSelected.ParentId || allParents.Contains(x.ProductGroupId));
-                    return PartialView(groupsList.ToList());
-                }
+                groupsList = db.ProductGroups.Where(x => x.ParentId == groupSelected.ParentId || allParents.Contains(x.ProductGroupId));
             }
-            return null;
+            else
+            {
+                groupsList = db.ProductGroups.Where(x => x.Depth == 0);
+            }
+            return PartialView(groupsList.ToList());
+
         }
 
         public ActionResult getOthFilter(string id)

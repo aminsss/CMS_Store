@@ -60,8 +60,8 @@ label {
     .menu label.mainToggle {
         z-index: 9999;
         position: absolute;
-        left: -115px;
-        width: 117px;
+        left: -100px;
+        width: 102px;
         height: 60px;
         line-height: 55px;
         display: compact;

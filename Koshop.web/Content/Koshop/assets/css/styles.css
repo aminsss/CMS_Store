@@ -1555,7 +1555,7 @@ input[type="button"].btn-block {
     position: relative;
     padding: 60px 0 45px;
     border-top: 2px solid #e17950;
-    background: #d8e2de;
+    background: #2c353a;
 }
 
 .an-footer-map {
@@ -1575,7 +1575,7 @@ input[type="button"].btn-block {
   margin: 0;
   font-size: 0; }
     .an-category-list-link.dark li a {
-        color: #374249;
+        color: #fff;
     }
   .an-category-list-link.light {
     padding: 0; }
@@ -1732,10 +1732,13 @@ input[type="button"].btn-block {
   .an-widget .copyrights {
     color: #4d5d66;
     line-height: 20px; }
-    .an-widget p {
-        color: #4c4249;
+    .an-widget p , a {
+        color: #fff;
         margin-bottom: 0;
         line-height: 20px;
+    }
+    .an-widget h4 {
+		color:#a6a6a6;
     }
 
 .an-pagination {

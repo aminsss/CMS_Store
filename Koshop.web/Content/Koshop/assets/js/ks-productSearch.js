@@ -1,20 +1,10 @@
-﻿//$(".an-scalupkala").hover(function () {
-//    var id = $(this).attr("id");
-//    $("#existence_" + id.replace("kalaStore_", "")).fadeIn();
-//    $("#count_" + id.replace("kalaStore_", "")).fadeIn();
-//    $("#price_" + id.replace("kalaStore_", "")).hide();
-//}, function () {
-//    var id = $(this).attr("id");
-//    $("#price_" + id.replace("kalaStore_", "")).fadeIn();
-//    $("#existence_" + id.replace("kalaStore_", "")).hide();
-//    $("#count_" + id.replace("kalaStore_", "")).hide();
-//});
-$(document).ready(function () {
-    //$("#titlegropsearch").text($("#SlctGrpList").val().replace(/-/g, " ")/* + " در " + $("#slcstateList").val().replace(/-/g, " ")*/);
+﻿$(document).ready(function () {
     var thishref = getUrlVars();
+    var groupSelected = "";
     if (thishref.SlctGrpFilt != undefined && thishref.SlctGrpFilt != '') {
+        groupSelected = thishref.SlctGrpFilt;
         $.ajax({
-            url: "/Product/getOthFilter/" + thishref.SlctGrpFilt /*$("#SlctGrpList").val()*/,
+            url: "/Product/getOthFilter/" + groupSelected,
             success: function (result) {
                 $('#OthFilter').html(result);
             },
@@ -28,21 +18,13 @@ $(document).ready(function () {
                     }
                 }
             });
-        $.ajax({
-            url: "/Product/GroupsTreeView/" + thishref.SlctGrpFilt,
-            success: function (result) {
-                $("#slcGrpTreediv").html(result);
-            }, error: function () { }
-        });
     }
-    //if ((thishref.state != undefined && thishref.state != '') || (thishref.city != undefined && thishref.city != '')) {
-    //    $.ajax({
-    //        url: "/Product/getCities/" + $("#slcstateList").val(),
-    //        success: function (result) {
-    //            $('#slccitydiv').html(result);
-    //        },
-    //    });
-    //}
+    $.ajax({
+        url: "/Product/GroupsTreeView/" + groupSelected,
+        success: function (result) {
+            $("#slcGrpTreediv").html(result);
+        }, error: function () { }
+    });
     if (thishref.sortOption != undefined && thishref.sortOption != '') {
         if (thishref.sortOption == 1)
             $('#newsrt').addClass("active");
@@ -147,7 +129,6 @@ window.addEventListener("popstate", function (e) {
 
 function ChangeUrl(page, url) {
     $('#dvscript').load("~/content/Koshop/assets/_scriptload.html");
-    //$("#titlegropsearch").text($("#SlctGrpList").val().replace(/-/g, " ") /*+ " در " + $("#slcstateList").val().replace(/-/g, " ")*/);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
     if (typeof (history.pushState) != "undefined")
     {
@@ -176,21 +157,6 @@ function getUrlVars() {
     }
     return vars;
 }
-
-//function yadaktreeCrtor(id) {
-//    $.ajax({
-//        url: "/Product/getyadak/" + id, success: function (result) {
-//            $("#slcyadakdiv").html(result);
-//            $.ajax({
-//                url: "/product/getOthFilter/" + id,
-//                success: function (result) { $("#yadakFilter").html(result); }
-//            });
-//        }
-//        , error: function () {
-//        },
-//    });
-//}
-
 function filterseprator(grp, atr, chksts) {
     var total = ""; var pastfilters; var chosenfilt = "";
     if (chksts == 0)
