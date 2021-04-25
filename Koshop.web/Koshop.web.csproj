@@ -1980,6 +1980,8 @@
     <Content Include="Content\Images\flags\zw.png" />
     <Content Include="Content\jasny-bootstrap.css" />
     <Content Include="Content\jasny-bootstrap.min.css" />
+    <Content Include="Content\Koshop\assets\img\expand-bottom.png" />
+    <Content Include="Content\Koshop\assets\img\expand-left.png" />
     <Content Include="Content\Koshop\assets\img\icon-arrow-left.png" />
     <Content Include="Content\Koshop\assets\img\icon-arrow-right.png" />
     <Content Include="Content\PagedList.css" />
@@ -2584,6 +2586,7 @@
     <Content Include="Views\Partials\ProductOfferModule.cshtml" />
     <Content Include="Views\Partials\ProductOfferSliderModule.cshtml" />
     <Content Include="Views\Partials\CategoryModule.cshtml" />
+    <Content Include="Views\Product\GroupsTreeView.cshtml" />
     <None Include="Web References\irSample\v2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

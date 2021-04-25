@@ -93,6 +93,13 @@ label {
 
     }
 
+         .test {
+            background: url('/Content/Koshop/assets/img/icon-arrow-right.png') 95% 50%/16px 16px no-repeat #2c353a;
+            border-left: 2px solid #deff14;
+            margin: 0;
+            width: 100%;
+        }
+
         .menu ul li a:hover, .menu ul li label:hover {
             color: #666;
         }

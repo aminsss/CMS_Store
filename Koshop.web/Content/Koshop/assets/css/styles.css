@@ -2650,8 +2650,31 @@ input[type="button"].btn-block {
 .home-slider .owl-pagination {
   display: none; }
 
+.an-black-title{
+    color:#333;
+}
+
+.depth-1{
+    padding-right : 15px;
+}
+.depth-2 {
+    padding-right: 30px;
+}
+.depth-3 {
+    padding-right: 45px;
+}
+.depth-4 {
+    padding-right: 60px;
+}
+.depth-5 {
+    padding-right: 75px;
+}
+
+
+
 .home-slider .owl-pagination {
-  display: none; }
+    display: none;
+}
 
 .home-slider .owl-nav {
   position: absolute;

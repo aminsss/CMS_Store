@@ -10,7 +10,7 @@
 //    $("#count_" + id.replace("kalaStore_", "")).hide();
 //});
 $(document).ready(function () {
-    $("#titlegropsearch").text($("#SlctGrpList").val().replace(/-/g, " ")/* + " در " + $("#slcstateList").val().replace(/-/g, " ")*/);
+    //$("#titlegropsearch").text($("#SlctGrpList").val().replace(/-/g, " ")/* + " در " + $("#slcstateList").val().replace(/-/g, " ")*/);
     var thishref = getUrlVars();
     if (thishref.SlctGrpFilt != undefined && thishref.SlctGrpFilt != '') {
         $.ajax({
@@ -28,15 +28,21 @@ $(document).ready(function () {
                     }
                 }
             });
-    }
-    if ((thishref.state != undefined && thishref.state != '') || (thishref.city != undefined && thishref.city != '')) {
         $.ajax({
-            url: "/Product/getCities/" + $("#slcstateList").val(),
+            url: "/Product/GroupsTreeView/" + thishref.SlctGrpFilt,
             success: function (result) {
-                $('#slccitydiv').html(result);
-            },
+                $("#slcGrpTreediv").html(result);
+            }, error: function () { }
         });
     }
+    //if ((thishref.state != undefined && thishref.state != '') || (thishref.city != undefined && thishref.city != '')) {
+    //    $.ajax({
+    //        url: "/Product/getCities/" + $("#slcstateList").val(),
+    //        success: function (result) {
+    //            $('#slccitydiv').html(result);
+    //        },
+    //    });
+    //}
     if (thishref.sortOption != undefined && thishref.sortOption != '') {
         if (thishref.sortOption == 1)
             $('#newsrt').addClass("active");
@@ -46,7 +52,7 @@ $(document).ready(function () {
             $('#mostsrt').addClass("active");
     } else
     {
-        $('#newsrt').addClass("active")
+        $('#newsrt').addClass("active");
     }
     if (thishref.exist != undefined && thishref.exist != '')
     {
@@ -61,13 +67,7 @@ $(document).ready(function () {
     $('#citychooser  a[href]').each(function () {
         var href = $(this).attr('href'); ret = linkeditor(href); $(this).attr('href', ret);
     });
-    //$.ajax({ url: "/Product/getyadak/" + $("#yadak").val(),
-    //  success: function (result) { $("#slcyadakdiv").html(result);
-    //  $.ajax({ url: "/product/getOthFilter/" + $("#yadak").val(),
-    //            success: function (result) { $("#yadakFilter").html(result); }
-    //        });
-    //    }, error: function () { }
-    //});
+    
 });
 
 function resetfilters() {
@@ -147,7 +147,7 @@ window.addEventListener("popstate", function (e) {
 
 function ChangeUrl(page, url) {
     $('#dvscript').load("~/content/Koshop/assets/_scriptload.html");
-    $("#titlegropsearch").text($("#SlctGrpList").val().replace(/-/g, " ") /*+ " در " + $("#slcstateList").val().replace(/-/g, " ")*/);
+    //$("#titlegropsearch").text($("#SlctGrpList").val().replace(/-/g, " ") /*+ " در " + $("#slcstateList").val().replace(/-/g, " ")*/);
     $('html, body').animate({ scrollTop: 0 }, 'slow');
     if (typeof (history.pushState) != "undefined")
     {

@@ -16,27 +16,13 @@
 
 <div id="all-e-map">
     <div id="catdiv">
-        <div class="an-inner-banner ">
+        <div class="an-inner-banner">
             <div class="container">
                 <div class="an-search-container">
                     <form action="#">
                         <div class="search-fields">
                             <div class="row">
-                                @*<div class="col-md-3">
-                                        <div class="an-default-select-wrapper location">
-                                            <select id="slcstateList">
-                                                @Html.Action("getstate", new { @id = ViewBag.state, @city = ViewBag.city })
-                                            </select>
-                                        </div>
-                                    </div>*@
-                                <div class="col-md-3">
-                                       <div class="an-default-select-wrapper">
-                                            <select id="SlctGrpList">
-                                                @Html.Action("GroupsOfProduct", new { @id = ViewBag.SlctGrpFilt })
-                                            </select>
-                                        </div>
-                                    </div>
-                                <div class="col-md-9">
+                                <div class="col-md-12">
                                     @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "an-form-control", @placeholder = "جستجوی نام کالا", @autocomplete = "off" })
                                 </div>
                             </div>
@@ -64,13 +50,10 @@
                     }
                     <div class="col-md-3  an-filterdiv">
                         <div class="an-sidebar">
-                            <div id="slccitydiv"></div>
+
+                            <div id="slcGrpTreediv"></div>
 
                             <div id="OthFilter" class="an-form"></div>
-
-                            <div id="slcyadakdiv"></div>
-
-                            <div id="yadakFilter" class="an-form"></div>
 
                             @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Side" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
                             {

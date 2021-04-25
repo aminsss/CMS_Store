@@ -39,8 +39,7 @@ foreach (var item in product_Groups)
                 <label class="menutype" for="menu-@item.ProductGroupId">@item.GroupTitle</label>
                 <input type="checkbox" id="menu-@item.ProductGroupId" name="menu-@item.ProductGroupId" class="menu-checkbox menutype">
                 <div class="menu">
-                    @*<label class="menu-toggle"  style="background: #ffe900;    border-left: 2px solid #deff14;color: #2c353a;margin:0;width:100%;"><span>بازگشت</span></label>*@
-                    <label class="menutype" for="menu-@item.ProductGroupId" style="background: url('/Content/Koshop/assets/img/icon-arrow-right.png') 95% 50%/16px 16px no-repeat #2c353a;border-left: 2px solid #deff14;color: #ffc900;margin:0;width:100%;"><span class="menutype"> @item.GroupTitle</span></label>
+                    <label class="menutype test" for="menu-@item.ProductGroupId" style="color: #ffc900;"><span class="menutype"> @item.GroupTitle</span></label>
                     <div class="groups">
                         <ul>
                             @ShowTree(db.ProductGroups.Where(s => s.ParentId == item.ProductGroupId))

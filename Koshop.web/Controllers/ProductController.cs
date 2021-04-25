@@ -138,7 +138,7 @@ namespace Koshop.web.Controllers
 
         public ActionResult getyadak(string id)
         {
-             var idforgrp = db.ProductGroups.Where(x => x.GroupTitle == id.Replace("-", " ")).FirstOrDefault();
+            var idforgrp = db.ProductGroups.Where(x => x.GroupTitle == id.Replace("-", " ")).FirstOrDefault();
             if (idforgrp != null)
                 return PartialView(db.ProductGroups.Where(x => x.ProductGroupId == idforgrp.ProductGroupId).FirstOrDefault());
             return null;
@@ -165,6 +165,23 @@ namespace Koshop.web.Controllers
             if (id != null)
                 ViewBag.selected = id.Replace("-", " ");
             return PartialView(db.ProductGroups.ToList());
+        }
+
+        public ActionResult GroupsTreeView(string id)
+        {
+            if (id != null)
+            {
+                ViewBag.groupSelected = id.Replace(" ", "-");
+                var groupSelected = db.ProductGroups.Where(x => x.GroupTitle == id.Replace("-", " ")).FirstOrDefault();
+                ViewBag.groupSelectedParentId = groupSelected.ParentId;
+                var allParents = groupSelected.Path.Split('/').Select(int.Parse).ToList();
+                if (groupSelected != null)
+                {
+                    var groupsList = db.ProductGroups.Where(x => x.ParentId == groupSelected.ParentId || allParents.Contains(x.ProductGroupId));
+                    return PartialView(groupsList.ToList());
+                }
+            }
+            return null;
         }
 
         public ActionResult getOthFilter(string id)
