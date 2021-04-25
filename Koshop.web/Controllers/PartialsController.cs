@@ -46,6 +46,10 @@ namespace Koshop.web.Controllers
         {
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
         }
+        public ActionResult PageModule(int? id)
+        {
+            return PartialView(_moduleService.GetById(id));
+        }
 
 
         public ActionResult AboutModule(int id)
