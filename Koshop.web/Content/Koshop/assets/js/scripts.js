@@ -7,6 +7,28 @@
 ;(function($) {
   'use strict';
 
+     /*
+   * Customize Template
+   */
+
+    $(document).on("click", function (e) {
+        var target = $(e.target);
+        if (target.is(".mainToggle , .groups, .menutype") === false) {
+            if ($("#menu").is(":checked")) {
+                $("#closemenu").click();
+            }
+        }
+        if ($("#menu").is(":checked")) {
+            $("#openmenu").hide();
+            $("#closemenu").show();
+        }
+        else {
+            $("#openmenu").show();
+            $("#closemenu").hide();
+            $(".menu-checkbox").prop("checked", false);
+        }
+    });
+
 
   /*
    * Loader scripts
@@ -64,10 +86,6 @@
     });
   }
 
-    //$('.store').on("click", function () {
-    //    $(".store").removeClass("activeS");
-
-    //});
 
   if ($('.listing-slider').length > 0) {
     $('.listing-slider').owlCarousel({
@@ -137,13 +155,13 @@
   if($('.an-search-show-more').length > 0) {
     $('.an-search-show-more .show-content').hide();
 
-    $('.an-search-show-more .show-more-btn').on('click', function(e) {
-      e.preventDefault();
-      $(this).toggleClass('active');
+      $('.an-search-show-more .show-more-btn').on('click', function (e) {
+          e.preventDefault();
+          $(this).toggleClass('active');
 
-      $('.an-search-show-more .show-content').toggle(200);
+          $('.an-search-show-more .show-content').toggle(200);
 
-    })
+      });
   }
 
     if ($(window).width() < 1030) {
@@ -164,7 +182,18 @@
         }
         else if (st < lastScrollTop) {
             $(".an-header").addClass("sticky");
+            
+        }
 
+        if (st > lastScrollTop) {
+            if (!$("#menu").is(":checked")) {
+                $(".mainToggle ").fadeOut(300);//.css("transform", "translate3d(300px, 0, 0)");
+            }
+        }
+        else {
+            if (!$("#menu").is(":checked")) {
+                $(".mainToggle ").fadeIn(500);//.css("transform", "translate3d(0, 0, 0)");
+            }
         }
         
         lastScrollTop = st;

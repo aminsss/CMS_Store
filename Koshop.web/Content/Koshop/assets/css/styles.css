@@ -1732,7 +1732,7 @@ input[type="button"].btn-block {
   .an-widget .copyrights {
     color: #4d5d66;
     line-height: 20px; }
-    .an-widget p , a {
+    .an-widget p {
         color: #fff;
         margin-bottom: 0;
         line-height: 20px;

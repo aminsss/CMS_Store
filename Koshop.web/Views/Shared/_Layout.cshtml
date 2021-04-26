@@ -71,22 +71,7 @@
     <script src="~/content/Koshop/assets/js/scripts.js" type="text/javascript"></script>
     <script>
 
-        $(document).on("click", function (e) {
-            var target = $(e.target);
-            if (target.is(".mainToggle , .groups, .menutype") === false) {
-                if ($("#menu").is(":checked")) {
-                    $("#closemenu").click();
-                }
-            }
-            if ($("#menu").is(":checked")) {
-                $("#openmenu").hide();
-                $("#closemenu").show();
-            }
-            else {
-                $("#openmenu").show();
-                $("#closemenu").hide();
-            }
-        });
+        
 
 
         function refreshback() {

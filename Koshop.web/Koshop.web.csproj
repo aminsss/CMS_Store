@@ -2438,7 +2438,7 @@
     <Content Include="Views\Email\disposecode.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Partials\MenuModule.cshtml" />
-    <Content Include="Views\Partials\mapmodule.cshtml" />
+    <Content Include="Views\Partials\MapModule.cshtml" />
     <Content Include="Views\Partials\ContactModule.cshtml" />
     <Content Include="Views\Partials\HtmlModule.cshtml" />
     <Content Include="Views\Partials\NewsletterModule.cshtml" />
