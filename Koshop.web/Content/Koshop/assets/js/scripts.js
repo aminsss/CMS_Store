@@ -19,12 +19,12 @@
             }
         }
         if ($("#menu").is(":checked")) {
-            $("#openmenu").hide();
-            $("#closemenu").show();
+            $("#openmenu").fadeOut(200);
+            $("#closemenu").fadeIn(200);
         }
         else {
-            $("#openmenu").show();
-            $("#closemenu").hide();
+            $("#openmenu").fadeIn(200);
+            $("#closemenu").fadeOut(200);
             $(".menu-checkbox").prop("checked", false);
         }
     });
@@ -185,16 +185,16 @@
             
         }
 
-        if (st > lastScrollTop) {
-            if (!$("#menu").is(":checked")) {
-                $(".mainToggle ").fadeOut(300);//.css("transform", "translate3d(300px, 0, 0)");
-            }
-        }
-        else {
-            if (!$("#menu").is(":checked")) {
-                $(".mainToggle ").fadeIn(500);//.css("transform", "translate3d(0, 0, 0)");
-            }
-        }
+        //if (st > lastScrollTop) {
+        //    if (!$("#menu").is(":checked")) {
+        //        $(".mainToggle ").fadeOut(300);//.css("transform", "translate3d(300px, 0, 0)");
+        //    }
+        //}
+        //else {
+        //    if (!$("#menu").is(":checked")) {
+        //        $(".mainToggle ").fadeIn(500);//.css("transform", "translate3d(0, 0, 0)");
+        //    }
+        //}
         
         lastScrollTop = st;
     });

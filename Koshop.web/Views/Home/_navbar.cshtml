@@ -10,44 +10,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/"><img src="~/content/Koshop/assets/img/logo-final-white.png" alt=""></a>
+    <a class="navbar-brand" href="/"><img src="~/content/Koshop/assets/img/bayok.png" alt=""></a>
 </div>
 
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul id="menuss" class="nav navbar-nav">
         @MenuTree(Model.Where(s => s.Depth == 0 && s.MenuGroup.MenuType == "MainMenu"))
-        @*<li class="nav-item ">
-                @if (!User.Identity.IsAuthenticated)
-                {
-                    <a href="/Account/Login" class="nav-link"><img src="/zovio/assets/fonts/user.svg" style="height: 24px;"></a>
-                }
-                else
-                {
-                    <a href="#" class="nav-link"><img src="/zovio/assets/fonts/user.svg" style="height: 24px;"></a>
-                    <ul class="dropdown-menu">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            var user = db.Users.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
-                            <li class="nav-item">
-                                <a href="/Account/Profile" class="nav-link"><img src="~/Content/Upload/Profile/@user.Profile" style="height: 24px;" class="img-circle img-responsive" /> @user.Name</a>
-                            </li>
-                            if (user.RoleId == 1)
-                            {
-                                <li class="nav-item">
-                                    <a href="/Admin" class="nav-link"><img src="~/zovio/assets/fonts/star.svg" style="height: 18px" class="img-circle img-responsive" /> ورود به پنل مدیریت</a>
-                                </li>
-                            }
-                            <li class="nav-item">
-                                <a href="/Account/SignOut" class="nav-link"><img src="~/zovio/assets/fonts/logout.svg" style="height: 18px" class="img-circle img-responsive" /> خروج از حساب کاربری</a>
-                            </li>
-                        }
-                    </ul>
-                }
-            </li>*@
     </ul>
     <ul class="nav navbar-nav navbar-left">
 
-        <li><a class="an-btn an-btn-default" href="http://rapcosoft.com/" target="_blank"><i class="typcn typcn-location-outline"></i><span>سایت راپکو</span></a></li>
+        <li id="openmenu"><a class="an-btn an-btn-default "><label  class="mainToggle menu-toggle an-group-lable" for="menu"><span class="menutype">کالا و خدمات</span></label></a></li>
         <li><a class="sign-up-link" href="/admin"><i class="typcn typcn-user"></i><span>ورود به مدیریت</span></a></li>
     </ul>
 </div><!-- /.navbar-collapse -->
@@ -64,11 +36,11 @@
             }
             else if (item.PageType == "2")
             {
-                <a href="/Product/search?SlctGrpFilt=@item.PageContetnt" ><i class="ion-android-laptop color-moto"></i>@item.MenuTitle</a>
+                <a href="/Product/search?SlctGrpFilt=@item.PageContetnt"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle</a>
             }
             else if (item.PageType == "3")
             {
-                <a href="/Product/search?SlctGrpFilt=@item.PageContetnt"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
+                <a href="/Blog/Groups?group=@item.PageContetnt"><i class="ion-android-laptop color-moto"></i>@item.MenuTitle<span class="caret"></span></a>
             }
             else if (item.PageType == "4")
             {
@@ -97,7 +69,7 @@
                                         }
                                         else if (item2.PageType == "3")
                                         {
-                                            <a href="/Product/search?SlctGrpFilt=@item2.PageContetnt"> @item2.MenuTitle</a>
+                                            <a href="/Blog/Groups?group=@item.PageContetnt"> @item2.MenuTitle</a>
                                         }
                                         else if (item2.PageType == "4")
                                         {
@@ -113,26 +85,26 @@
                                         foreach (var item3 in Model.Where(s => s.ParentId == item2.MenuId))
                                         {
                                             <li>
-                                                 @if (item3.PageType == "1")
-                                                 {
+                                                @if (item3.PageType == "1")
+                                                {
                                                     <a href="@item3.PageName"> @item3.MenuTitle</a>
-                                                 }
-                                                 else if (item3.PageType == "2")
-                                                 {
+                                                }
+                                                else if (item3.PageType == "2")
+                                                {
                                                     <a href="/Product/search?SlctGrpFilt=@item3.PageContetnt"> @item3.MenuTitle</a>
-                                                 }
-                                                 else if (item3.PageType == "3")
-                                                 {
-                                                   <a href="/Product/search?SlctGrpFilt=@item3.PageContetnt"> @item3.MenuTitle</a>
-                                                 }
-                                                 else if (item3.PageType == "4")
-                                                 {
-                                                   <a>@item3.MenuTitle</a>
-                                                 }
-                                                 else if (item3.PageType == "5")
-                                                 {
-                                                   <a href="@item3.PageContetnt"> @item3.MenuTitle</a>
-                                                 }
+                                                }
+                                                else if (item3.PageType == "3")
+                                                {
+                                                    <a href="/Blog/Groups?group=@item.PageContetnt"> @item3.MenuTitle</a>
+                                                }
+                                                else if (item3.PageType == "4")
+                                                {
+                                                    <a>@item3.MenuTitle</a>
+                                                }
+                                                else if (item3.PageType == "5")
+                                                {
+                                                    <a href="@item3.PageContetnt"> @item3.MenuTitle</a>
+                                                }
                                             </li>
                                         }
 
@@ -143,12 +115,56 @@
                         }
 
                     </li>
-                    @*<li>
-                            <img class="menulaptopimage" src="~/content/Koshop/assets/img/laptopmenu.png" alt="لپ تاپ Laptop">
-                        </li>*@
                 </ul>
             }
 
         </li>
     }
 }
+
+<div id="wrapper" style="display:contents">
+    <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
+    <div class="menu">
+        <div style="top:85px">
+            <label  id="closemenu" style="color:#afc536;display:none" class="mainToggle menu-toggle" for="menu"><span class="menutype">بستن</span></label>
+        </div>
+        <div class="groups">
+            <ul>
+                @ShowTree(db.ProductGroups.Where(s => s.Depth == 0))
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+@helper ShowTree(IEnumerable<Koshop.DomainClasses.ProductGroup> product_Groups)
+{
+    Koshop.DataLayer.AppDbContext db = new Koshop.DataLayer.AppDbContext();
+
+    foreach (var item in product_Groups)
+    {
+        <li>
+            @if (item.Depth == 0)
+            {
+            }
+            @if (db.ProductGroups.Any(s => s.ParentId == item.ProductGroupId))
+            {
+                <label class="menutype" for="menu-@item.ProductGroupId">@item.GroupTitle</label>
+                <input type="checkbox" id="menu-@item.ProductGroupId" name="menu-@item.ProductGroupId" class="menu-checkbox menutype">
+                <div class="menu">
+                    <label class="menutype backbutton" for="menu-@item.ProductGroupId" style="color: #afc536;"><span class="menutype"> @item.GroupTitle</span></label>
+                    <div class="groups">
+                        <ul>
+                            @ShowTree(db.ProductGroups.Where(s => s.ParentId == item.ProductGroupId))
+                        </ul>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <a href="/Product/search?SlctGrpFilt=@item.GroupTitle.Trim().Replace(" ","-")"> @item.GroupTitle</a>
+            }
+        </li>
+    }
+}
+
