@@ -79,15 +79,15 @@
 
                     <div class="search-single">
                         <h4>برچسب ها</h4>
-                        @foreach (var item in Model.FirstOrDefault().News.NewsTag)
-                        {
-                            <a class="an-white-title" href="/Blog/Tags/@item.TagsTitle">
+                        <div class="an-tags">
+                            @foreach (var item in Model.FirstOrDefault().News.NewsTag)
+                            {
+                            <a class="an-white-title tag-link" href="/Blog/Tags/@item.TagsTitle">
                                 <span>@item.TagsTitle </span>
                             </a>
-                            <span>-</span>
-                        }
+                            }
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>

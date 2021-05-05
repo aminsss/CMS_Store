@@ -14,16 +14,39 @@
 </div>
 
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
     <ul id="menuss" class="nav navbar-nav">
         @MenuTree(Model.Where(s => s.Depth == 0 && s.MenuGroup.MenuType == "MainMenu"))
     </ul>
     <ul class="nav navbar-nav navbar-left">
-
-        <li id="openmenu"><a class="an-btn an-btn-default "><label  class="mainToggle menu-toggle an-group-lable" for="menu"><span class="menutype">کالا و خدمات</span></label></a></li>
+        <li>
+            <div class="an-search-container">
+                <form action="/product/Search">
+                    <div class="search-fields no-padding">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "an-form-control  no-margin", @placeholder = "جستجوی کالا و خدمات ...", @autocomplete = "off" })
+                                @*<input name="searchstring" value="@ViewBag.CurrentFilter" class='an-form-control no-margin' type="text" placeholder="جستجوی کالا و خدمات ...">*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-submit" style="width:15%">
+                        <button class="an-btn an-btn-default" id="btnSearch" type="submit"><i class="ion-android-search"></i></button>
+                    </div>
+                </form>
+            </div> <!-- end an-search-container -->
+        </li>
+        <li id="openmenu"><a class="an-btn an-btn-default "><label class="mainToggle menu-toggle an-group-lable" for="menu"><span class="menutype">کالا و خدمات</span></label></a></li>
         <li><a class="sign-up-link" href="/admin"><i class="typcn typcn-user"></i><span>ورود به مدیریت</span></a></li>
     </ul>
 </div><!-- /.navbar-collapse -->
+@*<div id="catdiv">
+        <div class="an-inner-banner">
+            <div class="container">
 
+            </div> <!-- end cotnainer -->
+        </div>
+    </div>   <!-- end an-cat-div-->*@
 
 @helper MenuTree(IEnumerable<Koshop.DomainClasses.Menu> menu)
 {
@@ -126,7 +149,7 @@
     <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
     <div class="menu">
         <div style="top:85px">
-            <label  id="closemenu" style="color:#afc536;display:none" class="mainToggle menu-toggle" for="menu"><span class="menutype">بستن</span></label>
+            <label id="closemenu" style="color:#afc536;display:none" class="mainToggle menu-toggle" for="menu"><span class="menutype">بستن</span></label>
         </div>
         <div class="groups">
             <ul>

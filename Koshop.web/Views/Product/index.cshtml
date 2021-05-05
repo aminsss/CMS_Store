@@ -15,26 +15,26 @@
 }
 
 <div id="all-e-map">
-    <div id="catdiv">
-        <div class="an-inner-banner">
-            <div class="container">
-                <div class="an-search-container">
-                    <form action="#">
-                        <div class="search-fields">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "an-form-control", @placeholder = "جستجوی نام کالا", @autocomplete = "off" })
+    @*<div id="catdiv">
+            <div class="an-inner-banner">
+                <div class="container">
+                    <div class="an-search-container">
+                        <form action="#">
+                            <div class="search-fields">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.TextBox("SearchString",null, new { @class = "an-form-control", @placeholder = "جستجوی نام کالا", @autocomplete = "off" })
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="search-submit">
-                            <button class="an-btn an-btn-default" id="btnSearch" type="submit"><i class="ion-android-search"></i></button>
-                        </div>
-                    </form>
-                </div> <!-- end an-search-container -->
-            </div> <!-- end cotnainer -->
-        </div>
-    </div>   <!-- end an-cat-div-->
+                            <div class="search-submit">
+                                <button class="an-btn an-btn-default" id="btnSearch" type="submit"><i class="ion-android-search"></i></button>
+                            </div>
+                        </form>
+                    </div> <!-- end an-search-container -->
+                </div> <!-- end cotnainer -->
+            </div>
+        </div>   <!-- end an-cat-div-->*@
 
     @using (Html.BeginForm("", "search", FormMethod.Get))
     {
@@ -105,9 +105,8 @@
     }
 </div>
 @section Script{
-
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/content/Koshop/assets/js/ks-productSearch.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 }
 
 @section Head{

@@ -2637,6 +2637,8 @@
     <Content Include="Views\Partials\CategoryModule.cshtml" />
     <Content Include="Views\Product\GroupsTreeView.cshtml" />
     <Content Include="Views\Partials\PageModule.cshtml" />
+    <Content Include="Views\Partials\SliderShowSmallModule.cshtml" />
+    <Content Include="Views\Partials\PictureOfferModule.cshtml" />
     <None Include="Web References\irSample\v2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

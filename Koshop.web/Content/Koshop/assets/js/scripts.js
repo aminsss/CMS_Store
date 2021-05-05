@@ -19,11 +19,11 @@
             }
         }
         if ($("#menu").is(":checked")) {
-            $("#openmenu").fadeOut(200);
+            //$("#openmenu").fadeOut(200);
             $("#closemenu").fadeIn(200);
         }
         else {
-            $("#openmenu").fadeIn(200);
+            //$("#openmenu").fadeIn(200);
             $("#closemenu").fadeOut(200);
             $(".menu-checkbox").prop("checked", false);
         }

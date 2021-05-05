@@ -50,33 +50,37 @@
             <div class="col-md-9">
                 <div class="content-body">
                     <div class="an-section-container">
-                        <div class="owl-carousel listing-slider owl-theme">
-                            <div class="">
-                                <div class="slider-item" style="background: url('/Content/Upload/NewsImages/Images/@Model.NewsImage') center center no-repeat;
-                          background-size:contain;">
-                                </div>
-                            </div>
-                        </div>
+                       
 
                         <div class="an-blog-post">
+                         @if (Model.NewsImage != "no-photo.jpg")
+                         {
+                            <div class="owl-carousel listing-slider owl-theme">
+                                <div class="">
+                                    <div class="slider-item" style="background: url('/Content/Upload/NewsImages/Images/@Model.NewsImage') center center no-repeat;
+                                                                         background-size:contain;">
+                                    </div>
+                                </div>
+                            </div>
+                         }
                             <div class="content">
                                 <h3>@Model.NewsTitle</h3>
 
+                                <p class="an-quote"> @Model.NewsContent </p>
+
                                 @Html.Raw(Model.NewsDescription)
 
-
+                            <br />
                                 @if (Model.NewsGallery.Any())
                                 {
-                                    foreach (var item in Model.NewsGallery)
+                                <div class="owl-carousel listing-slider owl-theme">
+                                    @foreach (var item in Model.NewsGallery)
                                     {
-                                        <div class="owl-carousel listing-slider owl-theme">
-                                            <div class="">
-                                                <div class="slider-item" style="background: url('/Content/Upload/NewsImages/Images/@Model.NewsImage') center center no-repeat;
+                                    <div class="slider-item" style="background: url('/Content/Upload/NewsImages/Images/@Model.NewsImage') center center no-repeat;
                                                           background-size:cover;">
-                                                </div>
-                                            </div>
-                                        </div>
+                                    </div>
                                     }
+                                </div>
                                 }
 
                                 <div class="entry-meta">
@@ -100,10 +104,8 @@
                                 </div>
 
                             </div> <!-- end content -->
-
                             <div class="an-comment-section">
                                 <h4 class="an-title-xs">دیدگاهها <span>(@Model.NewsComments.Count(x => x.IsActive == true))</span></h4>
-
                                 @foreach (var item in Model.NewsComments.Where(x => x.ParentId == 0 && x.IsActive))
                                 {
 
@@ -135,30 +137,32 @@
                                         </div>
                                         @foreach (var item2 in Model.NewsComments.Where(x => x.ParentId == item.NewsCommentId && x.IsActive))
                                         {
-                                            if (item2.UserId == null)
-                                            {
-                                                <div class="comment-img"
-                                                     style="background: url('/Content/Upload/Profile/no-photo.png') center center no-repeat;
-                                                background-size:cover;"></div>
-                                            }
-                                            else
-                                            {
-                                                <div class="comment-img"
-                                                     style="background: url('/Content/Upload/Profile/@item2.User.Profile') center center no-repeat;
-                                                background-size:cover;"></div>
-                                            }
-                                            <div class="comment-details">
-                                                @*<b class="fn">@item.User.Name</b>*@
-                                                <h5><a href="#">@item2.Name</a> <span>@item2.AddedDate.Value.ToString("HH:mm  yyyy/MM/dd")</span></h5>
-                                                <p class="commnet">@item2.Comment</p>
+                                            <div class="an-comment-single with-shadow-dark">
                                                 @if (item2.UserId == null)
                                                 {
-                                                    <a id="@item2.Name" name="@item2.NewsCommentId" class="reply-link" href="#"><i class="ion-ios-redo"></i>پاسخ دادن</a>
+                                                    <div class="comment-img"
+                                                         style="background: url('/Content/Upload/Profile/no-photo.png') center center no-repeat;
+                                                background-size:cover;"></div>
                                                 }
                                                 else
                                                 {
-                                                    <a id="@item2.User.Name" name="@item2.NewsCommentId" class="reply-link" href="#"><i class="ion-ios-redo"></i>پاسخ دادن</a>
+                                                    <div class="comment-img"
+                                                         style="background: url('/Content/Upload/Profile/@item2.User.Profile') center center no-repeat;
+                                                background-size:cover;"></div>
                                                 }
+                                                <div class="comment-details">
+                                                    @*<b class="fn">@item.User.Name</b>*@
+                                                    <h5><a href="#">@item2.Name</a> <span>@item2.AddedDate.Value.ToString("HH:mm  yyyy/MM/dd")</span></h5>
+                                                    <p class="commnet">@item2.Comment</p>
+                                                    @if (item2.UserId == null)
+                                                    {
+                                                        <a id="@item2.Name" name="@item2.NewsCommentId" class="reply-link" href="#"><i class="ion-ios-redo"></i>پاسخ دادن</a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a id="@item2.User.Name" name="@item2.NewsCommentId" class="reply-link" href="#"><i class="ion-ios-redo"></i>پاسخ دادن</a>
+                                                    }
+                                                </div>
                                             </div>
                                         }
                                     </div> <!-- end an-comment-single -->
@@ -243,13 +247,14 @@
 
                         <div class="search-single">
                             <h4>برچسب ها</h4>
-                            @foreach (var item in Model.NewsTag)
+                            <div class="an-tags">
+                                @foreach (var item in Model.NewsTag)
                                 {
-                                    <a class="an-white-title" href="/Blog/Tags/@item.TagsTitle">
+                                    <a class="an-white-title tag-link" href="/Blog/Tags/@item.TagsTitle">
                                         <span>@item.TagsTitle </span>
                                     </a>
-                                    <span>-</span>
                                 }
+                            </div>
                         </div>
                     </div> <!-- end an-sidebar -->
                 </div> <!-- end col-md-3 -->

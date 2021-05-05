@@ -1129,7 +1129,6 @@ input[type="button"].btn-block {
   left: 0; }
 
 .an-page-content {
-    background:white;
   position: relative;
   width: 100%; }
   .an-page-content .content-body {
@@ -5055,6 +5054,5 @@ h4.sidelines {
     }
 
 .an-group-lable {
-    margin: 0;
-    font-weight: 100;
+    margin: 3px;
 }

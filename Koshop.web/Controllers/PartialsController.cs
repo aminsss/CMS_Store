@@ -22,6 +22,10 @@ namespace Koshop.web.Controllers
         {
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
         }
+        public ActionResult SliderShowSmallModule(int id)
+        {
+            return PartialView(_multiPictureModuleService.GetByModuleId(id));
+        }
         public ActionResult HtmlModule(int? id)
         {
             return PartialView(_moduleService.GetById(id));
@@ -43,6 +47,10 @@ namespace Koshop.web.Controllers
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
         }
         public ActionResult CategoryModule(int id)
+        {
+            return PartialView(_multiPictureModuleService.GetByModuleId(id));
+        }
+        public ActionResult PictureOfferModule(int id)
         {
             return PartialView(_multiPictureModuleService.GetByModuleId(id));
         }
