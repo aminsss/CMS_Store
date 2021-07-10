@@ -8,13 +8,13 @@
 <ul class="useful-links">
     @foreach (var item in db.Menus.Where(x => x.MenuGroup.MenuModule.Any(y => y.MenuModuleId == Model.ModuleId)))
     {
-        if (item.PageType != "5")
+        if (item.PageType == "5")
         {
-            <li><a href="@item.PageContetnt">@item.MenuTitle</a></li>
+            <li><a target="_blank" href="@item.PageContetnt">@item.MenuTitle</a></li>
         }
-        else if(item.PageType != "1")
+        else if(item.PageType == "1")
         {
-            <li><a href="/@item.PageName">@item.MenuTitle</a></li>
+            <li><a  href="/@item.PageName">@item.MenuTitle</a></li>
         }
     }
 </ul>

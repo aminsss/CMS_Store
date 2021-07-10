@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/"><img src="~/content/Koshop/assets/img/bayok.png" alt=""></a>
+    <a class="navbar-brand" href="/"><img src="~/content/Koshop/assets/img/bayokj5.svg" alt=""></a>
 </div>
 
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -149,7 +149,7 @@
     <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
     <div class="menu">
         <div style="top:85px">
-            <label id="closemenu" style="color:#afc536;display:none" class="mainToggle menu-toggle" for="menu"><span class="menutype">بستن</span></label>
+            <label id="closemenu" style="color:#ab1278;display:none" class="mainToggle menu-toggle" for="menu"><span class="menutype">بستن</span></label>
         </div>
         <div class="groups">
             <ul>
@@ -175,7 +175,7 @@
                 <label class="menutype" for="menu-@item.ProductGroupId">@item.GroupTitle</label>
                 <input type="checkbox" id="menu-@item.ProductGroupId" name="menu-@item.ProductGroupId" class="menu-checkbox menutype">
                 <div class="menu">
-                    <label class="menutype backbutton" for="menu-@item.ProductGroupId" style="color: #afc536;"><span class="menutype"> @item.GroupTitle</span></label>
+                    <label class="menutype backbutton" for="menu-@item.ProductGroupId" style="color: #ab1278;"><span class="menutype"> @item.GroupTitle</span></label>
                     <div class="groups">
                         <ul>
                             @ShowTree(db.ProductGroups.Where(s => s.ParentId == item.ProductGroupId))

@@ -1981,8 +1981,18 @@
     <Content Include="Content\Images\svg\telegram_6433537.svg" />
     <Content Include="Content\jasny-bootstrap.css" />
     <Content Include="Content\jasny-bootstrap.min.css" />
+    <Content Include="Content\Koshop\assets\img\Bayokj2.svg" />
+    <Content Include="Content\Koshop\assets\img\bayokj.svg" />
     <Content Include="Content\Koshop\assets\img\bayok-final.png" />
     <Content Include="Content\Koshop\assets\img\bayok.png" />
+    <Content Include="Content\Koshop\assets\img\bayok.svg" />
+    <Content Include="Content\Koshop\assets\img\Bayok2.svg" />
+    <Content Include="Content\Koshop\assets\img\Bayok3.svg" />
+    <Content Include="Content\Koshop\assets\img\bayokfinal.svg" />
+    <Content Include="Content\Koshop\assets\img\bayokj3.svg" />
+    <Content Include="Content\Koshop\assets\img\bayokj4.svg" />
+    <Content Include="Content\Koshop\assets\img\bayokj5.svg" />
+    <Content Include="Content\Koshop\assets\img\BayokName.svg" />
     <Content Include="Content\Koshop\assets\img\expand-bottom.png" />
     <Content Include="Content\Koshop\assets\img\expand-left.png" />
     <Content Include="Content\Koshop\assets\img\icon-arrow-left.png" />
@@ -2639,6 +2649,7 @@
     <Content Include="Views\Partials\PageModule.cshtml" />
     <Content Include="Views\Partials\SliderShowSmallModule.cshtml" />
     <Content Include="Views\Partials\PictureOfferModule.cshtml" />
+    <Content Include="Views\Partials\PictureOfferSingleModule.cshtml" />
     <None Include="Web References\irSample\v2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

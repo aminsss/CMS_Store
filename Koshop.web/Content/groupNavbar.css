@@ -25,7 +25,7 @@ label {
     -ms-overflow-style: none;
     scrollbar-width: none;
     background-color: #2c353a;
-    border-right: 2px solid #afc536;
+    border-right: 2px solid #ab1278;
 }
 
 .groups::-webkit-scrollbar {
@@ -72,7 +72,7 @@ label {
         text-indent: 0px;
         background: none;
         background-color: #2c353a;
-        border: 2px solid #afc536;
+        border: 2px solid #ab1278;
         border-left: none;
         text-align: center;
     }
@@ -96,7 +96,7 @@ label {
 
 .backbutton {
     background: url('/Content/Koshop/assets/img/icon-arrow-right.png') 95% 50%/16px 16px no-repeat #2c353a;
-    border-right: 2px solid #afc536;
+    border-right: 2px solid #ab1278;
     margin: 0;
     width: 100%;
 }

@@ -48,51 +48,53 @@
                     {
                         @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
                     }
-                    <div class="col-md-3  an-filterdiv">
-                        <div class="an-sidebar">
+                    <div style="padding-top:10px">
+                        <div class="col-md-3  an-filterdiv">
+                            <div class="an-sidebar">
 
-                            <div id="slcGrpTreediv"></div>
+                                <div id="slcGrpTreediv"></div>
 
-                            <div id="OthFilter" class="an-form"></div>
+                                <div id="OthFilter" class="an-form"></div>
 
-                            @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Side" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
-                            {
-                                @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
-                            }
+                                @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Side" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
+                                {
+                                    @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
+                                }
 
-                        </div> <!-- end an-sidebar -->
-                    </div>
-                    <div class="col-md-9 no-padding">
-                        <div class="content-body">
-                            <div class=" full-width">
-                                <div class="an-tab-container">
-                                    <div class="tab-nav pdside-10">
-                                        <div class="row">
-                                            <h3>جستجوی <span id="titlegropsearch">کالا</span><span id="counter"> (@Response.Headers["Counter"] کالا ) </span></h3>
+                            </div> <!-- end an-sidebar -->
+                        </div>
+                        <div class="col-md-9 no-padding">
+                            <div class="content-body">
+                                <div class=" full-width">
+                                    <div class="an-tab-container">
+                                        <div class="tab-nav pdside-10">
+                                            <div class="row">
+                                                <h3>جستجوی <span id="titlegropsearch">کالا</span><span id="counter"> (@Response.Headers["Counter"] کالا ) </span></h3>
+                                            </div>
+                                            <div class="row">
+                                                <ul class="nav nav-tabs" id="sortoptionli" role="tablist">
+                                                    <li role="presentation" id="newsrt"><a onclick="sortchange(1)" class="btn" role="tab" data-toggle="tab">جدیدترین</a></li>
+                                                    <li role="presentation" id="favsrt"><a onclick="sortchange(2)" class="btn" role="tab" data-toggle="tab">محبوب ترین</a></li>
+                                                    <li role="presentation" id="mostsrt"><a onclick="sortchange(3)" class="btn" role="tab" data-toggle="tab">پربازدیدترین</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="row">
-                                            <ul class="nav nav-tabs" id="sortoptionli" role="tablist">
-                                                <li role="presentation" id="newsrt"><a onclick="sortchange(1)" class="btn" role="tab" data-toggle="tab">جدیدترین</a></li>
-                                                <li role="presentation" id="favsrt"><a onclick="sortchange(2)" class="btn" role="tab" data-toggle="tab">محبوب ترین</a></li>
-                                                <li role="presentation" id="mostsrt"><a onclick="sortchange(3)" class="btn" role="tab" data-toggle="tab">پربازدیدترین</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
 
-                                    <!-- Tab panes -->
+                                        <!-- Tab panes -->
 
-                                </div> <!-- an-tab-container -->
-                            </div> <!-- end listing-result-content -->
-                            <div id="dvContent">
-                                @{
-                                    @Html.Partial("_productList", Model);
+                                    </div> <!-- an-tab-container -->
+                                </div> <!-- end listing-result-content -->
+                                <div id="dvContent">
+                                    @{
+                                        @Html.Partial("_productList", Model);
+                                    }
+                                </div>
+                                <div id="dvscript"></div>
+                                @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Content" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
+                                {
+                                    @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
                                 }
                             </div>
-                            <div id="dvscript"></div>
-                            @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Content" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
-                            {
-                                @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
-                            }
                         </div>
                     </div>
                     @foreach (var item in db.ModulePages.Where(y => (y.Menu.PageName == "ProductSearch" || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "Bottom" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))

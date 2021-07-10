@@ -147,15 +147,15 @@ namespace Koshop.web.Controllers
         public ActionResult Login(LoginViewModel login, string returnUrl, string captcha)
         {
 
-            //string result = googlecaptcha(null);
+            string result = googlecaptcha(null);
 
-            ////// validate the response from Google reCaptcha
-            //var captChaesponse = JsonConvert.DeserializeObject<reCaptchaResponse>(result);
-            //if (!captChaesponse.Success)
-            //{
-            //    ViewBag.Message = "لطفا ابتدا کادر تایید هویتی را علامت بزنید!";
-            //    return View();
-            //}
+            //// validate the response from Google reCaptcha
+            var captChaesponse = JsonConvert.DeserializeObject<reCaptchaResponse>(result);
+            if (!captChaesponse.Success)
+            {
+                ViewBag.Message = "لطفا ابتدا کادر تایید هویتی را علامت بزنید!";
+                return View();
+            }
 
             // go ahead and write code to validate mobile password against database
             var Qlogin = _userService.LogIn(login.UserName, login.password);

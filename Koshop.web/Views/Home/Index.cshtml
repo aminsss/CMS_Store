@@ -17,13 +17,13 @@
         <div class="an-page-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         @foreach (var item in Model.ModulePage.Where(y => (y.MenuId == Model.MenuId || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "SmallSlider" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
                         {
                             @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })
                         }
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         @foreach (var item in Model.ModulePage.Where(y => (y.MenuId == Model.MenuId || y.Menu.PageName == "ALLPages") && y.Module.Position.PositionName == "SliderSide" && y.Module.IsActive == true).OrderBy(z => z.Module.DisplayOrder))
                         {
                             @Html.Action(item.Module.Component.ActionName, item.Module.Component.ControllerName, new { @id = item.ModuleId })

@@ -61,7 +61,7 @@ namespace Koshop.web.Content.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to فروشگاه بای اُک | BayOk Store.
+        ///   Looks up a localized string similar to فروشگاه بای اُک | BayOk .
         /// </summary>
         public static string SiteTitle {
             get {

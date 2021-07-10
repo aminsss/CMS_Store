@@ -61,11 +61,11 @@
 
   if ($('.default-slider').length > 0) {
     $('.default-slider').owlCarousel({
-      items: 5,
+      items: 4,
       autoplay: true,
       loop: true,
       navigation: true,
-      margin: 20,
+      margin: 15,
       rtl:true,
       navText: ['&#xf2ca', '&#xf30f'],
       pagination: true,
@@ -79,7 +79,7 @@
             nav:true
         },
         1000:{
-            items:5,
+            items:4,
             nav:true,
         }
     }
@@ -327,7 +327,7 @@
     $( "#slider-year-range" ).slider({
       range: true,
       min: 1998,
-      max: 2017,
+      max: 2021,
       values: [ 2002, 2012 ],
       slide: function( event, ui ) {
         $( "#amount3" ).val( ui.values[ 0 ]);
